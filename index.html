@@ -1,15 +1,16 @@
+```html
 <!DOCTYPE html>
 <html lang="hy">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Աստղը դառնում է 8 տարեկան</title>
+<title>Astghik · 8th Birthday</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 
@@ -19,8 +20,11 @@
     --soft-pink: #f8e8ed;
     --rose: #c98fa3;
     --deep-rose: #9f657a;
+
     --dark: #3d3034;
-    --muted: #8e777e;
+    --dark-text: #4a3038;
+    --muted: #765f67;
+
     --white: #ffffff;
 }
 
@@ -35,370 +39,421 @@ html {
 }
 
 body {
+    font-family: "Montserrat", sans-serif;
     background: var(--light-pink);
     color: var(--dark);
-    font-family: "Montserrat", sans-serif;
-    overflow-x: hidden;
 }
 
 /* =========================
-   PRELOADER
-========================= */
-
-.preloader {
-    position: fixed;
-    inset: 0;
-    background: var(--soft-pink);
-    z-index: 9999;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: opacity 1s ease, visibility 1s ease;
-}
-
-.preloader.hide {
-    opacity: 0;
-    visibility: hidden;
-}
-
-.loader-text {
-    color: var(--deep-rose);
-    font-family: "Cormorant Garamond", serif;
-    font-size: 30px;
-    letter-spacing: 5px;
-}
-
-
-/* =========================
-   HERO / FIRST PAGE
+   HERO
 ========================= */
 
 .hero {
     min-height: 100vh;
-    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
 
+    position: relative;
+    overflow: hidden;
+
     background:
         linear-gradient(
-            rgba(248, 224, 232, .48),
-            rgba(251, 236, 241, .58)
+            rgba(45, 25, 32, .58),
+            rgba(45, 25, 32, .68)
         ),
-        url("https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=2000&q=90")
-        center/cover no-repeat;
-}
+        url("https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=2000&q=90");
 
-.hero::before {
-    content: "";
-    position: absolute;
-    inset: 24px;
-    border: 1px solid rgba(159,101,122,.45);
-    pointer-events: none;
+    background-size: cover;
+    background-position: center;
 }
 
 .hero-content {
-    position: relative;
-    z-index: 2;
-    padding: 35px 25px;
-    animation: fadeUp 1.5s ease forwards;
+    width: 92%;
+    max-width: 1100px;
+    padding: 70px 20px;
+    color: white;
+    animation: fadeIn 1.5s ease;
 }
 
-.invitation {
-    font-size: 10px;
-    letter-spacing: 6px;
+.small-title {
+    font-size: 12px;
+    letter-spacing: 5px;
     text-transform: uppercase;
-    color: var(--deep-rose);
-    margin-bottom: 25px;
+    margin-bottom: 28px;
+    font-weight: 500;
+    color: #ffffff;
 }
 
 .hero h1 {
     font-family: "Cormorant Garamond", serif;
-    font-size: clamp(58px, 11vw, 125px);
-    font-weight: 400;
-    line-height: .85;
-    color: var(--dark);
-    letter-spacing: -2px;
-}
 
-.hero h2 {
-    font-family: "Cormorant Garamond", serif;
-    font-size: clamp(34px, 5vw, 58px);
+    font-size: clamp(48px, 9vw, 105px);
+
     font-weight: 400;
-    margin-top: 25px;
-    color: var(--deep-rose);
+    line-height: .95;
+
+    color: #ffffff;
+
+    letter-spacing: -1px;
+
+    text-shadow:
+        0 3px 18px rgba(0,0,0,.35);
+
+    margin-bottom: 30px;
 }
 
 .date-time {
-    margin-top: 35px;
     font-family: "Cormorant Garamond", serif;
+
     font-size: clamp(25px, 4vw, 38px);
+
+    color: #ffffff;
+
     letter-spacing: 2px;
-    color: var(--dark);
-    line-height: 1.4;
+
+    margin-bottom: 18px;
+
+    text-shadow:
+        0 2px 10px rgba(0,0,0,.35);
 }
 
 .party {
-    margin-top: 13px;
-    font-size: 12px;
-    letter-spacing: 7px;
-    font-weight: 500;
-    color: var(--deep-rose);
-    text-transform: uppercase;
+    font-size: 13px;
+
+    letter-spacing: 6px;
+
+    font-weight: 600;
+
+    color: #ffffff;
+
+    margin-bottom: 55px;
+
+    text-shadow:
+        0 2px 8px rgba(0,0,0,.4);
 }
 
-.countdown-title {
-    margin-top: 42px;
-    font-size: 9px;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: var(--muted);
-}
+/* =========================
+   COUNTDOWN
+========================= */
 
 .countdown {
     display: flex;
     justify-content: center;
-    gap: 32px;
-    margin-top: 17px;
+    align-items: center;
+
+    gap: clamp(18px, 5vw, 55px);
+
+    color: #3d252d;
+
+    margin-top: 15px;
 }
 
-.count-item {
-    min-width: 65px;
+.countdown-item {
+    min-width: 70px;
+
+    color: #3d252d;
 }
 
-.count-number {
+.countdown-number {
     font-family: "Cormorant Garamond", serif;
-    font-size: 37px;
-    color: var(--dark);
+
+    font-size: clamp(36px, 6vw, 58px);
+
+    font-weight: 600;
+
     line-height: 1;
+
+    color: #3d252d;
+
+    text-shadow:
+        0 2px 10px rgba(255,255,255,.65);
 }
 
-.count-label {
-    margin-top: 5px;
-    font-size: 7px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--muted);
+.countdown-label {
+    margin-top: 9px;
+
+    font-size: 10px;
+
+    letter-spacing: 1.5px;
+
+    font-weight: 600;
+
+    color: #4f343d;
+
+    text-shadow:
+        0 1px 5px rgba(255,255,255,.55);
 }
 
-.scroll {
-    position: absolute;
-    bottom: 27px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: var(--deep-rose);
-    font-size: 8px;
-    letter-spacing: 4px;
-    text-transform: uppercase;
+/* =========================
+   SECTIONS
+========================= */
+
+.section {
+    padding: 100px 25px;
 }
 
-.scroll::after {
-    content: "";
-    display: block;
-    width: 1px;
-    height: 35px;
-    background: var(--rose);
-    margin: 10px auto 0;
+.section-inner {
+    max-width: 1050px;
+    margin: auto;
 }
-
 
 /* =========================
    INTRO
 ========================= */
 
-section {
-    padding: 105px 25px;
-}
-
-.container {
-    max-width: 1100px;
-    margin: auto;
-}
-
 .intro {
     background: var(--light-pink);
-}
 
-.section-label {
-    font-size: 9px;
-    letter-spacing: 5px;
-    color: var(--rose);
-    text-transform: uppercase;
     text-align: center;
-    margin-bottom: 18px;
 }
 
-.section-title {
+.intro-title {
     font-family: "Cormorant Garamond", serif;
-    font-size: clamp(45px, 7vw, 72px);
-    font-weight: 400;
-    text-align: center;
-    line-height: 1;
-    color: var(--dark);
-}
 
-.divider {
-    width: 55px;
-    height: 1px;
-    background: var(--rose);
-    margin: 27px auto;
+    font-size: clamp(38px, 6vw, 62px);
+
+    font-weight: 400;
+
+    color: var(--deep-rose);
+
+    margin-bottom: 30px;
 }
 
 .intro-text {
-    max-width: 650px;
-    margin: 35px auto 0;
-    text-align: center;
-    color: var(--muted);
-    line-height: 2;
-    font-size: 14px;
-}
+    max-width: 760px;
 
+    margin: auto;
+
+    font-size: 15px;
+
+    line-height: 2;
+
+    color: #4a3038;
+
+    font-weight: 500;
+
+    text-shadow:
+        0 1px 5px rgba(255,255,255,.45);
+}
 
 /* =========================
    DETAILS
 ========================= */
 
 .details {
-    background: #f4d7e0;
-    color: var(--dark);
+    background: var(--soft-pink);
 }
 
 .details-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    margin-top: 60px;
-    border-top: 1px solid rgba(159,101,122,.25);
-    border-bottom: 1px solid rgba(159,101,122,.25);
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
 }
 
-.detail {
-    padding: 48px 25px;
+.detail-card {
+    background: rgba(255,255,255,.58);
+
+    padding: 45px 25px;
+
     text-align: center;
-    border-right: 1px solid rgba(159,101,122,.25);
+
+    border: 1px solid rgba(159,101,122,.12);
+
+    transition: .4s ease;
 }
 
-.detail:last-child {
-    border-right: none;
+.detail-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 15px 35px rgba(120,70,90,.12);
 }
 
-.detail-icon {
-    color: var(--deep-rose);
-    font-size: 24px;
-    margin-bottom: 18px;
-}
-
-.detail h3 {
+.detail-number {
     font-family: "Cormorant Garamond", serif;
-    font-size: 29px;
-    font-weight: 500;
+
+    font-size: 50px;
+
+    color: var(--deep-rose);
+
+    margin-bottom: 8px;
+}
+
+.detail-title {
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    color: #674b54;
+
     margin-bottom: 12px;
+
+    font-weight: 600;
 }
 
-.detail p {
-    color: var(--muted);
-    font-size: 11px;
+.detail-text {
+    font-size: 13px;
+
     line-height: 1.8;
-}
 
+    color: #705b62;
+}
 
 /* =========================
    LOCATION
 ========================= */
 
 .location {
-    background: white;
-}
+    background: var(--light-pink);
 
-.location-box {
-    max-width: 760px;
-    margin: 55px auto 0;
     text-align: center;
-    padding: 65px 30px;
-    border: 1px solid #ead3da;
-    background: #fffafb;
 }
 
-.location-name {
-    font-family: "Cormorant Garamond", serif;
-    font-size: 43px;
-    color: var(--dark);
-    margin-bottom: 12px;
-}
+.location-label {
+    font-size: 11px;
 
-.location-address {
-    color: var(--muted);
-    font-size: 12px;
-    margin-bottom: 32px;
-}
+    letter-spacing: 4px;
 
-.button {
-    display: inline-block;
-    padding: 15px 30px;
-    border: 1px solid var(--deep-rose);
-    color: var(--deep-rose);
-    text-decoration: none;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 9px;
-    transition: all .3s ease;
+
+    color: var(--rose);
+
+    margin-bottom: 20px;
 }
 
-.button:hover {
+.location h2 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(40px, 6vw, 65px);
+
+    font-weight: 400;
+
+    color: var(--deep-rose);
+
+    margin-bottom: 20px;
+}
+
+.location p {
+    color: #705b62;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+
+    margin-bottom: 30px;
+}
+
+.map-button {
+    display: inline-block;
+
+    padding: 14px 28px;
+
+    border: 1px solid var(--rose);
+
+    color: var(--deep-rose);
+
+    text-decoration: none;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    transition: .3s ease;
+}
+
+.map-button:hover {
     background: var(--deep-rose);
+
     color: white;
 }
-
 
 /* =========================
    FINAL
 ========================= */
 
 .final {
-    min-height: 65vh;
+    min-height: 60vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
 
     background:
         linear-gradient(
-            rgba(246, 220, 229, .55),
-            rgba(250, 232, 238, .65)
+            rgba(80, 40, 52, .55),
+            rgba(80, 40, 52, .65)
         ),
-        url("https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&w=2000&q=90")
-        center/cover no-repeat;
+        url("https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=2000&q=90");
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    background-size: cover;
+
+    background-position: center;
 }
 
-.final-content h2 {
+.final-content {
+    color: white;
+
+    padding: 40px;
+}
+
+.final-small {
+    font-size: 11px;
+
+    letter-spacing: 5px;
+
+    margin-bottom: 25px;
+}
+
+.final h2 {
     font-family: "Cormorant Garamond", serif;
-    font-size: clamp(50px, 8vw, 90px);
+
+    font-size: clamp(45px, 8vw, 85px);
+
     font-weight: 400;
-    color: var(--dark);
+
+    margin-bottom: 25px;
 }
 
-.final-content p {
-    color: var(--deep-rose);
-    margin-top: 20px;
-    letter-spacing: 3px;
-    font-size: 10px;
-}
+.final p {
+    font-family: "Cormorant Garamond", serif;
 
+    font-size: 25px;
+
+    font-style: italic;
+}
 
 /* =========================
    FOOTER
 ========================= */
 
 footer {
-    background: #ead0d9;
-    color: var(--deep-rose);
-    padding: 32px 20px;
+    background: #ead0da;
+
+    padding: 35px 20px;
+
     text-align: center;
-    font-size: 8px;
-    letter-spacing: 2px;
 }
 
+footer p {
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    color: #765963;
+}
 
 /* =========================
    MUSIC BUTTON
@@ -406,96 +461,157 @@ footer {
 
 .music-button {
     position: fixed;
-    right: 22px;
-    bottom: 22px;
-    width: 47px;
-    height: 47px;
+
+    right: 20px;
+
+    bottom: 20px;
+
+    width: 48px;
+
+    height: 48px;
+
     border-radius: 50%;
-    border: 1px solid var(--rose);
-    background: rgba(255,248,250,.94);
-    color: var(--deep-rose);
+
+    border: 1px solid rgba(255,255,255,.7);
+
+    background: rgba(80,40,52,.72);
+
+    color: white;
+
     cursor: pointer;
-    z-index: 1000;
-    font-size: 15px;
+
+    z-index: 999;
+
+    font-size: 17px;
+
+    backdrop-filter: blur(8px);
+
+    transition: .3s ease;
 }
 
+.music-button:hover {
+    transform: scale(1.08);
+}
 
 /* =========================
    ANIMATION
 ========================= */
 
-@keyframes fadeUp {
+@keyframes fadeIn {
 
     from {
         opacity: 0;
-        transform: translateY(30px);
+
+        transform:
+            translateY(20px);
     }
 
     to {
         opacity: 1;
-        transform: translateY(0);
+
+        transform:
+            translateY(0);
     }
 
 }
-
 
 /* =========================
    MOBILE
 ========================= */
 
-@media(max-width: 700px) {
-
-    section {
-        padding: 80px 20px;
-    }
-
-    .hero::before {
-        inset: 14px;
-    }
+@media (max-width: 700px) {
 
     .hero-content {
-        padding: 25px 15px;
+        padding:
+            50px 15px;
     }
 
-    .invitation {
-        letter-spacing: 4px;
+    .small-title {
+        font-size: 10px;
+
+        letter-spacing: 3px;
+
+        margin-bottom: 20px;
+    }
+
+    .hero h1 {
+        font-size: 52px;
+
+        line-height: 1;
+
+        margin-bottom: 25px;
+    }
+
+    .date-time {
+        font-size: 25px;
+
+        letter-spacing: 1px;
     }
 
     .party {
-        letter-spacing: 5px;
+        font-size: 11px;
+
+        letter-spacing: 4px;
+
+        margin-bottom: 40px;
     }
 
     .countdown {
         gap: 12px;
     }
 
-    .count-item {
+    .countdown-item {
         min-width: 55px;
     }
 
-    .count-number {
-        font-size: 32px;
+    .countdown-number {
+        font-size: 34px;
+    }
+
+    .countdown-label {
+        font-size: 8px;
+
+        letter-spacing: 1px;
+    }
+
+    .section {
+        padding: 75px 20px;
     }
 
     .details-grid {
         grid-template-columns: 1fr;
     }
 
-    .detail {
-        border-right: none;
-        border-bottom: 1px solid rgba(159,101,122,.25);
+}
+
+/* =========================
+   VERY SMALL MOBILE
+========================= */
+
+@media (max-width: 400px) {
+
+    .hero h1 {
+        font-size: 44px;
     }
 
-    .detail:last-child {
-        border-bottom: none;
+    .date-time {
+        font-size: 22px;
     }
 
-    .location-box {
-        padding: 45px 20px;
+    .countdown {
+        gap: 7px;
     }
 
-    .location-name {
-        font-size: 34px;
+    .countdown-item {
+        min-width: 48px;
+    }
+
+    .countdown-number {
+        font-size: 30px;
+    }
+
+    .countdown-label {
+        font-size: 7px;
     }
 
 }
@@ -507,102 +623,122 @@ footer {
 <body>
 
 
-<!-- PRELOADER -->
-
-<div class="preloader" id="preloader">
-    <div class="loader-text">ASTGHIK</div>
-</div>
-
-
 <!-- =========================
-     FIRST PAGE
+     HERO
 ========================= -->
 
 <section class="hero">
 
     <div class="hero-content">
 
-        <div class="invitation">
+        <div class="small-title">
             You are invited
         </div>
 
-        <h1>Աստղիկ</h1>
-
-        <h2>դառնում է 8 տարեկան</h2>
+        <h1>
+            Աստղը դառնում է 8 տարեկան
+        </h1>
 
         <div class="date-time">
             Սեպտեմբերի 6 · 13:00–17:00
         </div>
 
         <div class="party">
-            Pajamas Party
+            PAJAMAS PARTY
         </div>
 
 
         <!-- COUNTDOWN -->
 
-        <div class="countdown-title">
-            Մինչև տոնակատարությունը
-        </div>
-
         <div class="countdown">
 
-            <div class="count-item">
-                <div class="count-number" id="days">00</div>
-                <div class="count-label">Օր</div>
+            <div class="countdown-item">
+
+                <div
+                    class="countdown-number"
+                    id="days">
+                    00
+                </div>
+
+                <div class="countdown-label">
+                    Օր
+                </div>
+
             </div>
 
-            <div class="count-item">
-                <div class="count-number" id="hours">00</div>
-                <div class="count-label">Ժամ</div>
+
+            <div class="countdown-item">
+
+                <div
+                    class="countdown-number"
+                    id="hours">
+                    00
+                </div>
+
+                <div class="countdown-label">
+                    Ժամ
+                </div>
+
             </div>
 
-            <div class="count-item">
-                <div class="count-number" id="minutes">00</div>
-                <div class="count-label">Րոպե</div>
+
+            <div class="countdown-item">
+
+                <div
+                    class="countdown-number"
+                    id="minutes">
+                    00
+                </div>
+
+                <div class="countdown-label">
+                    Րոպե
+                </div>
+
             </div>
 
-            <div class="count-item">
-                <div class="count-number" id="seconds">00</div>
-                <div class="count-label">Վայրկյան</div>
+
+            <div class="countdown-item">
+
+                <div
+                    class="countdown-number"
+                    id="seconds">
+                    00
+                </div>
+
+                <div class="countdown-label">
+                    Վայրկյան
+                </div>
+
             </div>
 
         </div>
 
-    </div>
-
-
-    <div class="scroll">
-        Discover
     </div>
 
 </section>
+
 
 
 <!-- =========================
      INTRO
 ========================= -->
 
-<section class="intro">
+<section class="section intro">
 
-    <div class="container">
+    <div class="section-inner">
 
-        <div class="section-label">
-            A Special Day
-        </div>
-
-        <h2 class="section-title">
-            Եկեք միասին տոնենք
+        <h2 class="intro-title">
+            Սիրով սպասում ենք Ձեզ
         </h2>
 
-        <div class="divider"></div>
-
         <p class="intro-text">
+
             Սիրով հրավիրում ենք Ձեզ մասնակցելու
             Աստղի 8-րդ տարեդարձին։
             Սպասվում է ուրախ և գեղեցիկ օր՝
-            լի խաղերով, ժպիտներով և անմոռանալի
-            պահերով։
+            լի խաղերով, ժպիտներով և
+            անմոռանալի պահերով։
+
         </p>
 
     </div>
@@ -610,111 +746,119 @@ footer {
 </section>
 
 
+
 <!-- =========================
      DETAILS
 ========================= -->
 
-<section class="details">
+<section class="section details">
 
-    <div class="container">
-
-        <div class="section-label">
-            The Celebration
-        </div>
-
-        <h2 class="section-title">
-            Պահպանեք օրը
-        </h2>
+    <div class="section-inner">
 
         <div class="details-grid">
 
-            <div class="detail">
 
-                <div class="detail-icon">✦</div>
+            <div class="detail-card">
 
-                <h3>Սեպտեմբերի 6</h3>
+                <div class="detail-number">
+                    06
+                </div>
 
-                <p>
+                <div class="detail-title">
+                    Սեպտեմբեր
+                </div>
+
+                <div class="detail-text">
                     2026<br>
                     Կիրակի
-                </p>
+                </div>
 
             </div>
 
 
-            <div class="detail">
+            <div class="detail-card">
 
-                <div class="detail-icon">✧</div>
+                <div class="detail-number">
+                    13:00
+                </div>
 
-                <h3>13:00–17:00</h3>
+                <div class="detail-title">
+                    Ժամը
+                </div>
 
-                <p>
-                    Ծննդյան<br>
-                    տոնակատարություն
-                </p>
+                <div class="detail-text">
+                    Տոնակատարության սկիզբ<br>
+                    մինչև 17:00
+                </div>
+
+            </div>
+
+
+            <div class="detail-card">
+
+                <div class="detail-number">
+                    ♡
+                </div>
+
+                <div class="detail-title">
+                    Pajamas Party
+                </div>
+
+                <div class="detail-text">
+                    Wear your favorite<br>
+                    pajamas
+                </div>
 
             </div>
 
-
-            <div class="detail">
-
-                <div class="detail-icon">◇</div>
-
-                <h3>Pajamas Party</h3>
-
-                <p>
-                    Wear your<br>
-                    favorite pajamas
-                </p>
-
-            </div>
 
         </div>
 
     </div>
 
 </section>
+
 
 
 <!-- =========================
      LOCATION
 ========================= -->
 
-<section class="location">
+<section class="section location">
 
-    <div class="container">
+    <div class="section-inner">
 
-        <div class="section-label">
-            The Venue
+        <div class="location-label">
+            The celebration
         </div>
 
-        <h2 class="section-title">
-            Որտեղ ենք հանդիպելու
+        <h2>
+            COMPASS KIDS ZONE
         </h2>
 
-        <div class="location-box">
+        <p>
 
-            <div class="location-name">
-                COMPASS KIDS ZONE
-            </div>
+            Սեպտեմբերի 6 · 13:00–17:00<br>
 
-            <div class="location-address">
-                Սեպտեմբերի 6 · 13:00–17:00
-            </div>
+            Սիրով սպասում ենք Ձեզ
+            միասին նշելու Աստղի
+            8-րդ տարեդարձը։
 
-            <a
-                class="button"
-                href="https://www.google.com/maps/search/?api=1&query=COMPASS+KIDS+ZONE"
-                target="_blank"
-            >
-                Բացել քարտեզը
-            </a>
+        </p>
 
-        </div>
+        <a
+            class="map-button"
+            href="https://www.google.com/maps/search/?api=1&query=COMPASS+KIDS+ZONE"
+            target="_blank">
+
+            Open in Google Maps
+
+        </a>
 
     </div>
 
 </section>
+
 
 
 <!-- =========================
@@ -725,16 +869,16 @@ footer {
 
     <div class="final-content">
 
-        <div class="section-label">
-            With Love
+        <div class="final-small">
+            SAVE THE DATE
         </div>
 
         <h2>
-            Կհանդիպենք այնտեղ ♡
+            Աստղի 8-րդ տարեդարձ
         </h2>
 
         <p>
-            ԱՍՏՂԻ 8-ՐԴ ՏԱՐԵԴԱՐՁ
+            Կհանդիպենք այնտեղ ♡
         </p>
 
     </div>
@@ -742,65 +886,66 @@ footer {
 </section>
 
 
+
+<!-- =========================
+     FOOTER
+========================= -->
+
 <footer>
-    ASTGHIK · 8TH BIRTHDAY · PAJAMAS PARTY
+
+    <p>
+        ASTGHIK · 8TH BIRTHDAY · PAJAMAS PARTY
+    </p>
+
 </footer>
 
 
-<!-- MUSIC -->
+
+<!-- =========================
+     MUSIC
+========================= -->
 
 <button
     class="music-button"
     id="musicButton"
-    aria-label="Play music"
->
+    aria-label="Music">
+
     ♪
+
 </button>
 
 
 <audio
-    id="backgroundMusic"
-    loop
->
+    id="birthdayMusic"
+    loop>
+
     <source
-        src="https://cdn.pixabay.com/audio/2022/10/25/audio_946b3e9e65.mp3"
-        type="audio/mpeg"
-    >
+        src="https://cdn.pixabay.com/audio/2022/10/25/audio_946b8e4f9e.mp3"
+        type="audio/mpeg">
+
 </audio>
 
 
+
 <script>
-
-/* =========================
-   PRELOADER
-========================= */
-
-window.addEventListener("load", function() {
-
-    setTimeout(function() {
-
-        document
-            .getElementById("preloader")
-            .classList.add("hide");
-
-    }, 900);
-
-});
-
 
 /* =========================
    COUNTDOWN
 ========================= */
 
 const birthdayDate =
-    new Date("September 6, 2026 13:00:00").getTime();
+    new Date(
+        "September 6, 2026 13:00:00"
+    ).getTime();
 
 
 function updateCountdown() {
 
-    const now = new Date().getTime();
+    const now =
+        new Date().getTime();
 
-    const distance = birthdayDate - now;
+    const distance =
+        birthdayDate - now;
 
 
     if (distance <= 0) {
@@ -811,50 +956,60 @@ function updateCountdown() {
         document.getElementById("seconds").innerText = "00";
 
         return;
-
     }
 
 
     const days =
         Math.floor(
-            distance / (1000 * 60 * 60 * 24)
+            distance /
+            (1000 * 60 * 60 * 24)
         );
 
 
     const hours =
         Math.floor(
-            (distance % (1000 * 60 * 60 * 24))
-            / (1000 * 60 * 60)
+            (distance %
+            (1000 * 60 * 60 * 24))
+            /
+            (1000 * 60 * 60)
         );
 
 
     const minutes =
         Math.floor(
-            (distance % (1000 * 60 * 60))
-            / (1000 * 60)
+            (distance %
+            (1000 * 60 * 60))
+            /
+            (1000 * 60)
         );
 
 
     const seconds =
         Math.floor(
-            (distance % (1000 * 60))
-            / 1000
+            (distance %
+            (1000 * 60))
+            /
+            1000
         );
 
 
-    document.getElementById("days").innerText =
+    document.getElementById("days")
+        .innerText =
         String(days).padStart(2, "0");
 
 
-    document.getElementById("hours").innerText =
+    document.getElementById("hours")
+        .innerText =
         String(hours).padStart(2, "0");
 
 
-    document.getElementById("minutes").innerText =
+    document.getElementById("minutes")
+        .innerText =
         String(minutes).padStart(2, "0");
 
 
-    document.getElementById("seconds").innerText =
+    document.getElementById("seconds")
+        .innerText =
         String(seconds).padStart(2, "0");
 
 }
@@ -862,7 +1017,11 @@ function updateCountdown() {
 
 updateCountdown();
 
-setInterval(updateCountdown, 1000);
+setInterval(
+    updateCountdown,
+    1000
+);
+
 
 
 /* =========================
@@ -870,37 +1029,59 @@ setInterval(updateCountdown, 1000);
 ========================= */
 
 const music =
-    document.getElementById("backgroundMusic");
+    document.getElementById(
+        "birthdayMusic"
+    );
 
 const musicButton =
-    document.getElementById("musicButton");
+    document.getElementById(
+        "musicButton"
+    );
+
 
 let playing = false;
 
 
-musicButton.addEventListener("click", function() {
+musicButton.addEventListener(
+    "click",
+    function() {
 
-    if (!playing) {
+        if (!playing) {
 
-        music.play();
+            music.play()
+                .then(() => {
 
-        musicButton.innerHTML = "❚❚";
+                    playing = true;
 
-        playing = true;
+                    musicButton.innerText =
+                        "Ⅱ";
 
-    } else {
+                })
+                .catch(() => {
 
-        music.pause();
+                    alert(
+                        "Please tap the music button again."
+                    );
 
-        musicButton.innerHTML = "♪";
+                });
 
-        playing = false;
+        } else {
+
+            music.pause();
+
+            playing = false;
+
+            musicButton.innerText =
+                "♪";
+
+        }
 
     }
-
-});
+);
 
 </script>
 
+
 </body>
 </html>
+```

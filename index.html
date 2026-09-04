@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Աստղի ծննդյան տարեդարձ</title>
+<title>Աստղը դառնում է 8 տարեկան</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,11 +14,13 @@
 <style>
 
 :root {
-    --cream: #f7f3ed;
-    --dark: #171512;
-    --gold: #b59a6a;
-    --soft-gold: #d8c39a;
-    --muted: #817a70;
+    --pink: #f6dce5;
+    --light-pink: #fdf3f6;
+    --soft-pink: #f8e8ed;
+    --rose: #c98fa3;
+    --deep-rose: #9f657a;
+    --dark: #3d3034;
+    --muted: #8e777e;
     --white: #ffffff;
 }
 
@@ -33,18 +35,20 @@ html {
 }
 
 body {
-    background: var(--cream);
+    background: var(--light-pink);
     color: var(--dark);
     font-family: "Montserrat", sans-serif;
     overflow-x: hidden;
 }
 
-/* PRELOADER */
+/* =========================
+   PRELOADER
+========================= */
 
 .preloader {
     position: fixed;
     inset: 0;
-    background: var(--dark);
+    background: var(--soft-pink);
     z-index: 9999;
     display: flex;
     align-items: center;
@@ -58,13 +62,16 @@ body {
 }
 
 .loader-text {
-    color: var(--soft-gold);
+    color: var(--deep-rose);
     font-family: "Cormorant Garamond", serif;
     font-size: 30px;
     letter-spacing: 5px;
 }
 
-/* HERO */
+
+/* =========================
+   HERO / FIRST PAGE
+========================= */
 
 .hero {
     min-height: 100vh;
@@ -73,68 +80,115 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
+
     background:
         linear-gradient(
-            rgba(15, 14, 12, .55),
-            rgba(15, 14, 12, .70)
+            rgba(248, 224, 232, .48),
+            rgba(251, 236, 241, .58)
         ),
-        url("https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&w=2000&q=90")
+        url("https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=2000&q=90")
         center/cover no-repeat;
 }
 
 .hero::before {
     content: "";
     position: absolute;
-    inset: 25px;
-    border: 1px solid rgba(216,195,154,.6);
+    inset: 24px;
+    border: 1px solid rgba(159,101,122,.45);
     pointer-events: none;
 }
 
 .hero-content {
     position: relative;
     z-index: 2;
-    color: white;
-    padding: 30px;
+    padding: 35px 25px;
     animation: fadeUp 1.5s ease forwards;
 }
 
-.small-title {
+.invitation {
     font-size: 10px;
     letter-spacing: 6px;
     text-transform: uppercase;
-    color: var(--soft-gold);
-    margin-bottom: 28px;
+    color: var(--deep-rose);
+    margin-bottom: 25px;
 }
 
 .hero h1 {
     font-family: "Cormorant Garamond", serif;
-    font-size: clamp(55px, 11vw, 125px);
+    font-size: clamp(58px, 11vw, 125px);
+    font-weight: 400;
     line-height: .85;
-    font-weight: 300;
+    color: var(--dark);
     letter-spacing: -2px;
 }
 
 .hero h2 {
     font-family: "Cormorant Garamond", serif;
-    font-size: clamp(28px, 4vw, 48px);
+    font-size: clamp(34px, 5vw, 58px);
     font-weight: 400;
     margin-top: 25px;
+    color: var(--deep-rose);
 }
 
-.hero-date {
-    margin-top: 32px;
-    font-size: 11px;
+.date-time {
+    margin-top: 35px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(25px, 4vw, 38px);
+    letter-spacing: 2px;
+    color: var(--dark);
+    line-height: 1.4;
+}
+
+.party {
+    margin-top: 13px;
+    font-size: 12px;
+    letter-spacing: 7px;
+    font-weight: 500;
+    color: var(--deep-rose);
+    text-transform: uppercase;
+}
+
+.countdown-title {
+    margin-top: 42px;
+    font-size: 9px;
     letter-spacing: 4px;
     text-transform: uppercase;
+    color: var(--muted);
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    margin-top: 17px;
+}
+
+.count-item {
+    min-width: 65px;
+}
+
+.count-number {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 37px;
+    color: var(--dark);
+    line-height: 1;
+}
+
+.count-label {
+    margin-top: 5px;
+    font-size: 7px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
 }
 
 .scroll {
     position: absolute;
-    bottom: 28px;
+    bottom: 27px;
     left: 50%;
     transform: translateX(-50%);
-    color: white;
-    font-size: 9px;
+    color: var(--deep-rose);
+    font-size: 8px;
     letter-spacing: 4px;
     text-transform: uppercase;
 }
@@ -143,12 +197,15 @@ body {
     content: "";
     display: block;
     width: 1px;
-    height: 42px;
-    background: var(--soft-gold);
-    margin: 12px auto 0;
+    height: 35px;
+    background: var(--rose);
+    margin: 10px auto 0;
 }
 
-/* GENERAL */
+
+/* =========================
+   INTRO
+========================= */
 
 section {
     padding: 105px 25px;
@@ -159,10 +216,14 @@ section {
     margin: auto;
 }
 
+.intro {
+    background: var(--light-pink);
+}
+
 .section-label {
     font-size: 9px;
     letter-spacing: 5px;
-    color: var(--gold);
+    color: var(--rose);
     text-transform: uppercase;
     text-align: center;
     margin-bottom: 18px;
@@ -174,53 +235,47 @@ section {
     font-weight: 400;
     text-align: center;
     line-height: 1;
+    color: var(--dark);
 }
 
 .divider {
     width: 55px;
     height: 1px;
-    background: var(--gold);
+    background: var(--rose);
     margin: 27px auto;
-}
-
-/* INTRO */
-
-.intro {
-    background: var(--cream);
 }
 
 .intro-text {
     max-width: 650px;
     margin: 35px auto 0;
     text-align: center;
-    color: #716b61;
+    color: var(--muted);
     line-height: 2;
     font-size: 14px;
 }
 
-/* DETAILS */
+
+/* =========================
+   DETAILS
+========================= */
 
 .details {
-    background: var(--dark);
-    color: white;
-}
-
-.details .section-title {
-    color: white;
+    background: #f4d7e0;
+    color: var(--dark);
 }
 
 .details-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     margin-top: 60px;
-    border-top: 1px solid rgba(255,255,255,.13);
-    border-bottom: 1px solid rgba(255,255,255,.13);
+    border-top: 1px solid rgba(159,101,122,.25);
+    border-bottom: 1px solid rgba(159,101,122,.25);
 }
 
 .detail {
     padding: 48px 25px;
     text-align: center;
-    border-right: 1px solid rgba(255,255,255,.13);
+    border-right: 1px solid rgba(159,101,122,.25);
 }
 
 .detail:last-child {
@@ -228,7 +283,7 @@ section {
 }
 
 .detail-icon {
-    color: var(--soft-gold);
+    color: var(--deep-rose);
     font-size: 24px;
     margin-bottom: 18px;
 }
@@ -236,45 +291,20 @@ section {
 .detail h3 {
     font-family: "Cormorant Garamond", serif;
     font-size: 29px;
-    font-weight: 400;
+    font-weight: 500;
     margin-bottom: 12px;
 }
 
 .detail p {
-    color: #aaa49b;
+    color: var(--muted);
     font-size: 11px;
     line-height: 1.8;
 }
 
-/* COUNTDOWN */
 
-.countdown {
-    background: #eee9e1;
-}
-
-.countdown-wrapper {
-    display: flex;
-    justify-content: center;
-    gap: 55px;
-    margin-top: 55px;
-}
-
-.count-number {
-    font-family: "Cormorant Garamond", serif;
-    font-size: 62px;
-    font-weight: 400;
-    text-align: center;
-}
-
-.count-label {
-    font-size: 8px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--muted);
-    text-align: center;
-}
-
-/* LOCATION */
+/* =========================
+   LOCATION
+========================= */
 
 .location {
     background: white;
@@ -285,12 +315,14 @@ section {
     margin: 55px auto 0;
     text-align: center;
     padding: 65px 30px;
-    border: 1px solid #ded8ce;
+    border: 1px solid #ead3da;
+    background: #fffafb;
 }
 
 .location-name {
     font-family: "Cormorant Garamond", serif;
     font-size: 43px;
+    color: var(--dark);
     margin-bottom: 12px;
 }
 
@@ -303,8 +335,8 @@ section {
 .button {
     display: inline-block;
     padding: 15px 30px;
-    border: 1px solid var(--dark);
-    color: var(--dark);
+    border: 1px solid var(--deep-rose);
+    color: var(--deep-rose);
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -313,117 +345,64 @@ section {
 }
 
 .button:hover {
-    background: var(--dark);
+    background: var(--deep-rose);
     color: white;
 }
 
-/* RSVP */
 
-.rsvp {
-    background: var(--cream);
-}
-
-.rsvp-box {
-    max-width: 600px;
-    margin: 55px auto 0;
-}
-
-.form-group {
-    margin-bottom: 23px;
-}
-
-.form-group label {
-    display: block;
-    font-size: 9px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-bottom: 9px;
-}
-
-input,
-select,
-textarea {
-    width: 100%;
-    padding: 15px;
-    border: 1px solid #d8d1c6;
-    background: transparent;
-    font-family: "Montserrat", sans-serif;
-    font-size: 12px;
-    outline: none;
-}
-
-textarea {
-    height: 110px;
-    resize: none;
-}
-
-input:focus,
-select:focus,
-textarea:focus {
-    border-color: var(--gold);
-}
-
-.submit-button {
-    width: 100%;
-    border: none;
-    background: var(--dark);
-    color: white;
-    padding: 17px;
-    cursor: pointer;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    font-size: 9px;
-    transition: .3s;
-}
-
-.submit-button:hover {
-    background: var(--gold);
-}
-
-/* FINAL */
+/* =========================
+   FINAL
+========================= */
 
 .final {
     min-height: 65vh;
+
     background:
         linear-gradient(
-            rgba(15,14,12,.65),
-            rgba(15,14,12,.75)
+            rgba(246, 220, 229, .55),
+            rgba(250, 232, 238, .65)
         ),
-        url("https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=2000&q=90")
+        url("https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&w=2000&q=90")
         center/cover no-repeat;
 
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: white;
 }
 
 .final-content h2 {
     font-family: "Cormorant Garamond", serif;
     font-size: clamp(50px, 8vw, 90px);
-    font-weight: 300;
+    font-weight: 400;
+    color: var(--dark);
 }
 
 .final-content p {
-    color: #ddd5c9;
+    color: var(--deep-rose);
     margin-top: 20px;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
     font-size: 10px;
 }
 
-/* FOOTER */
+
+/* =========================
+   FOOTER
+========================= */
 
 footer {
-    background: var(--dark);
-    color: #aaa49b;
+    background: #ead0d9;
+    color: var(--deep-rose);
     padding: 32px 20px;
     text-align: center;
     font-size: 8px;
     letter-spacing: 2px;
 }
 
-/* MUSIC */
+
+/* =========================
+   MUSIC BUTTON
+========================= */
 
 .music-button {
     position: fixed;
@@ -432,15 +411,18 @@ footer {
     width: 47px;
     height: 47px;
     border-radius: 50%;
-    border: 1px solid var(--soft-gold);
-    background: rgba(20,19,17,.9);
-    color: var(--soft-gold);
+    border: 1px solid var(--rose);
+    background: rgba(255,248,250,.94);
+    color: var(--deep-rose);
     cursor: pointer;
     z-index: 1000;
     font-size: 15px;
 }
 
-/* ANIMATION */
+
+/* =========================
+   ANIMATION
+========================= */
 
 @keyframes fadeUp {
 
@@ -456,7 +438,10 @@ footer {
 
 }
 
-/* MOBILE */
+
+/* =========================
+   MOBILE
+========================= */
 
 @media(max-width: 700px) {
 
@@ -465,7 +450,31 @@ footer {
     }
 
     .hero::before {
-        inset: 15px;
+        inset: 14px;
+    }
+
+    .hero-content {
+        padding: 25px 15px;
+    }
+
+    .invitation {
+        letter-spacing: 4px;
+    }
+
+    .party {
+        letter-spacing: 5px;
+    }
+
+    .countdown {
+        gap: 12px;
+    }
+
+    .count-item {
+        min-width: 55px;
+    }
+
+    .count-number {
+        font-size: 32px;
     }
 
     .details-grid {
@@ -474,24 +483,11 @@ footer {
 
     .detail {
         border-right: none;
-        border-bottom: 1px solid rgba(255,255,255,.13);
+        border-bottom: 1px solid rgba(159,101,122,.25);
     }
 
     .detail:last-child {
         border-bottom: none;
-    }
-
-    .countdown-wrapper {
-        gap: 18px;
-    }
-
-    .count-number {
-        font-size: 40px;
-    }
-
-    .count-label {
-        font-size: 7px;
-        letter-spacing: 2px;
     }
 
     .location-box {
@@ -507,7 +503,9 @@ footer {
 </style>
 </head>
 
+
 <body>
+
 
 <!-- PRELOADER -->
 
@@ -516,25 +514,63 @@ footer {
 </div>
 
 
-<!-- HERO -->
+<!-- =========================
+     FIRST PAGE
+========================= -->
 
 <section class="hero">
 
     <div class="hero-content">
 
-        <div class="small-title">
-            You are cordially invited
+        <div class="invitation">
+            You are invited
         </div>
 
         <h1>Աստղիկ</h1>
 
-        <h2>Ծննդյան տարեդարձ</h2>
+        <h2>դառնում է 8 տարեկան</h2>
 
-        <div class="hero-date">
+        <div class="date-time">
             Սեպտեմբերի 6 · 13:00–17:00
         </div>
 
+        <div class="party">
+            Pajamas Party
+        </div>
+
+
+        <!-- COUNTDOWN -->
+
+        <div class="countdown-title">
+            Մինչև տոնակատարությունը
+        </div>
+
+        <div class="countdown">
+
+            <div class="count-item">
+                <div class="count-number" id="days">00</div>
+                <div class="count-label">Օր</div>
+            </div>
+
+            <div class="count-item">
+                <div class="count-number" id="hours">00</div>
+                <div class="count-label">Ժամ</div>
+            </div>
+
+            <div class="count-item">
+                <div class="count-number" id="minutes">00</div>
+                <div class="count-label">Րոպե</div>
+            </div>
+
+            <div class="count-item">
+                <div class="count-number" id="seconds">00</div>
+                <div class="count-label">Վայրկյան</div>
+            </div>
+
+        </div>
+
     </div>
+
 
     <div class="scroll">
         Discover
@@ -543,7 +579,9 @@ footer {
 </section>
 
 
-<!-- INTRO -->
+<!-- =========================
+     INTRO
+========================= -->
 
 <section class="intro">
 
@@ -561,11 +599,10 @@ footer {
 
         <p class="intro-text">
             Սիրով հրավիրում ենք Ձեզ մասնակցելու
-            Աստղի ծննդյան տարեդարձին։
-            Սպասվում է գեղեցիկ և ուրախ օր՝
-            լի ժպիտներով, խաղերով և անմոռանալի պահերով։
-            Ձեր ներկայությունը մեզ համար կլինի
-            ամենագեղեցիկ նվերը։
+            Աստղի 8-րդ տարեդարձին։
+            Սպասվում է ուրախ և գեղեցիկ օր՝
+            լի խաղերով, ժպիտներով և անմոռանալի
+            պահերով։
         </p>
 
     </div>
@@ -573,7 +610,9 @@ footer {
 </section>
 
 
-<!-- DETAILS -->
+<!-- =========================
+     DETAILS
+========================= -->
 
 <section class="details">
 
@@ -621,11 +660,11 @@ footer {
 
                 <div class="detail-icon">◇</div>
 
-                <h3>COMPASS KIDS ZONE</h3>
+                <h3>Pajamas Party</h3>
 
                 <p>
-                    Սիրով սպասում ենք<br>
-                    բոլորիդ
+                    Wear your<br>
+                    favorite pajamas
                 </p>
 
             </div>
@@ -637,50 +676,9 @@ footer {
 </section>
 
 
-<!-- COUNTDOWN -->
-
-<section class="countdown">
-
-    <div class="container">
-
-        <div class="section-label">
-            Counting the moments
-        </div>
-
-        <h2 class="section-title">
-            Մինչև մեր հանդիպումը
-        </h2>
-
-        <div class="countdown-wrapper">
-
-            <div>
-                <div class="count-number" id="days">00</div>
-                <div class="count-label">Օր</div>
-            </div>
-
-            <div>
-                <div class="count-number" id="hours">00</div>
-                <div class="count-label">Ժամ</div>
-            </div>
-
-            <div>
-                <div class="count-number" id="minutes">00</div>
-                <div class="count-label">Րոպե</div>
-            </div>
-
-            <div>
-                <div class="count-number" id="seconds">00</div>
-                <div class="count-label">Վայրկյան</div>
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- LOCATION -->
+<!-- =========================
+     LOCATION
+========================= -->
 
 <section class="location">
 
@@ -691,7 +689,7 @@ footer {
         </div>
 
         <h2 class="section-title">
-            Սպասում ենք Ձեզ
+            Որտեղ ենք հանդիպելու
         </h2>
 
         <div class="location-box">
@@ -719,90 +717,9 @@ footer {
 </section>
 
 
-<!-- RSVP -->
-
-<section class="rsvp">
-
-    <div class="container">
-
-        <div class="section-label">
-            Kindly Reply
-        </div>
-
-        <h2 class="section-title">
-            RSVP
-        </h2>
-
-        <div class="divider"></div>
-
-        <div class="rsvp-box">
-
-            <form id="rsvpForm">
-
-                <div class="form-group">
-
-                    <label>Ձեր անունը</label>
-
-                    <input
-                        type="text"
-                        placeholder="Գրեք Ձեր անունը"
-                        required
-                    >
-
-                </div>
-
-
-                <div class="form-group">
-
-                    <label>Կմասնակցե՞ք</label>
-
-                    <select required>
-
-                        <option value="">
-                            Ընտրեք տարբերակը
-                        </option>
-
-                        <option>
-                            Այո, սիրով կմասնակցեմ
-                        </option>
-
-                        <option>
-                            Ցավոք, չեմ կարող մասնակցել
-                        </option>
-
-                    </select>
-
-                </div>
-
-
-                <div class="form-group">
-
-                    <label>Հաղորդագրություն</label>
-
-                    <textarea
-                        placeholder="Գրեք հաղորդագրություն..."
-                    ></textarea>
-
-                </div>
-
-
-                <button
-                    type="submit"
-                    class="submit-button"
-                >
-                    Ուղարկել պատասխան
-                </button>
-
-            </form>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- FINAL -->
+<!-- =========================
+     FINAL
+========================= -->
 
 <section class="final">
 
@@ -813,11 +730,11 @@ footer {
         </div>
 
         <h2>
-            Կհանդիպենք այնտեղ
+            Կհանդիպենք այնտեղ ♡
         </h2>
 
         <p>
-            ՁԵՐ ՆԵՐԿԱՅՈՒԹՅՈՒՆԸ ՄԵԶ ՀԱՄԱՐ ԼԱՎԱԳՈՒՅՆ ՆՎԵՐՆ Է
+            ԱՍՏՂԻ 8-ՐԴ ՏԱՐԵԴԱՐՁ
         </p>
 
     </div>
@@ -826,11 +743,11 @@ footer {
 
 
 <footer>
-    ԱՍՏՂԻԿ · ԾՆՆԴՅԱՆ ՏԱՐԵԴԱՐՁ · 2026
+    ASTGHIK · 8TH BIRTHDAY · PAJAMAS PARTY
 </footer>
 
 
-<!-- MUSIC BUTTON -->
+<!-- MUSIC -->
 
 <button
     class="music-button"
@@ -854,7 +771,9 @@ footer {
 
 <script>
 
-/* PRELOADER */
+/* =========================
+   PRELOADER
+========================= */
 
 window.addEventListener("load", function() {
 
@@ -869,7 +788,9 @@ window.addEventListener("load", function() {
 });
 
 
-/* COUNTDOWN */
+/* =========================
+   COUNTDOWN
+========================= */
 
 const birthdayDate =
     new Date("September 6, 2026 13:00:00").getTime();
@@ -881,6 +802,7 @@ function updateCountdown() {
 
     const distance = birthdayDate - now;
 
+
     if (distance <= 0) {
 
         document.getElementById("days").innerText = "00";
@@ -889,10 +811,15 @@ function updateCountdown() {
         document.getElementById("seconds").innerText = "00";
 
         return;
+
     }
 
+
     const days =
-        Math.floor(distance / (1000 * 60 * 60 * 24));
+        Math.floor(
+            distance / (1000 * 60 * 60 * 24)
+        );
+
 
     const hours =
         Math.floor(
@@ -900,11 +827,13 @@ function updateCountdown() {
             / (1000 * 60 * 60)
         );
 
+
     const minutes =
         Math.floor(
             (distance % (1000 * 60 * 60))
             / (1000 * 60)
         );
+
 
     const seconds =
         Math.floor(
@@ -912,26 +841,33 @@ function updateCountdown() {
             / 1000
         );
 
+
     document.getElementById("days").innerText =
         String(days).padStart(2, "0");
+
 
     document.getElementById("hours").innerText =
         String(hours).padStart(2, "0");
 
+
     document.getElementById("minutes").innerText =
         String(minutes).padStart(2, "0");
+
 
     document.getElementById("seconds").innerText =
         String(seconds).padStart(2, "0");
 
 }
 
+
 updateCountdown();
 
 setInterval(updateCountdown, 1000);
 
 
-/* MUSIC */
+/* =========================
+   MUSIC
+========================= */
 
 const music =
     document.getElementById("backgroundMusic");
@@ -940,6 +876,7 @@ const musicButton =
     document.getElementById("musicButton");
 
 let playing = false;
+
 
 musicButton.addEventListener("click", function() {
 
@@ -962,23 +899,6 @@ musicButton.addEventListener("click", function() {
     }
 
 });
-
-
-/* RSVP */
-
-document
-    .getElementById("rsvpForm")
-    .addEventListener("submit", function(event) {
-
-        event.preventDefault();
-
-        alert(
-            "Շնորհակալություն։ Ձեր պատասխանը գրանցվեց ❤️"
-        );
-
-        this.reset();
-
-    });
 
 </script>
 

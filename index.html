@@ -20,7 +20,6 @@
     --rose: #8a5268;
     --deep-rose: #633b4d;
     --dark: #352229;
-    --dark-text: #3f2830;
 }
 
 * {
@@ -45,10 +44,13 @@ body {
 
 .hero {
     min-height: 100vh;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     text-align: center;
+
     position: relative;
     overflow: hidden;
 
@@ -66,74 +68,137 @@ body {
 .hero-content {
     width: 94%;
     max-width: 1100px;
+
     padding: 60px 20px;
+
     color: #3b252d;
+
     animation: fadeIn 1.5s ease;
 }
 
 .hero h1 {
     font-family: "Cormorant Garamond", serif;
+
     font-size: clamp(48px, 9vw, 105px);
+
     font-weight: 500;
+
     line-height: 1;
+
     color: #3b252d;
+
     letter-spacing: -1px;
+
     margin-bottom: 32px;
-    text-shadow: 0 2px 8px rgba(255,255,255,.8);
+
+    text-shadow:
+        0 2px 8px rgba(255,255,255,.8);
 }
 
 .party {
     font-family: "Cormorant Garamond", serif;
+
     font-size: clamp(25px, 4vw, 38px);
+
     letter-spacing: 1px;
+
     font-weight: 600;
+
     color: #3a252d;
+
+    margin-bottom: 10px;
+
+    text-shadow:
+        0 2px 8px rgba(255,255,255,.85);
+}
+
+/* COMPASS KIDS ZONE */
+
+.location-name {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(23px, 3.5vw, 34px);
+
+    font-weight: 600;
+
+    color: #633b4d;
+
+    letter-spacing: 1px;
+
     margin-bottom: 28px;
-    text-shadow: 0 2px 8px rgba(255,255,255,.85);
+
+    text-shadow:
+        0 2px 7px rgba(255,255,255,.8);
 }
 
 .date-time {
     font-family: "Cormorant Garamond", serif;
+
     font-size: clamp(26px, 4vw, 40px);
+
     font-weight: 600;
+
     color: #3f2830;
+
     letter-spacing: 2px;
+
     margin-bottom: 45px;
-    text-shadow: 0 2px 7px rgba(255,255,255,.8);
+
+    text-shadow:
+        0 2px 7px rgba(255,255,255,.8);
 }
 
-/* COUNTDOWN */
+/* =========================
+   COUNTDOWN
+========================= */
 
 .countdown {
     display: flex;
+
     justify-content: center;
     align-items: center;
+
     gap: clamp(18px, 5vw, 55px);
+
     color: #3b252d;
+
     margin-top: 15px;
 }
 
 .countdown-item {
     min-width: 70px;
+
     color: #3b252d;
 }
 
 .countdown-number {
     font-family: "Cormorant Garamond", serif;
+
     font-size: clamp(38px, 6vw, 60px);
+
     font-weight: 700;
+
     line-height: 1;
+
     color: #352229;
-    text-shadow: 0 2px 7px rgba(255,255,255,.8);
+
+    text-shadow:
+        0 2px 7px rgba(255,255,255,.8);
 }
 
 .countdown-label {
     margin-top: 9px;
+
     font-size: 10px;
+
     letter-spacing: 1.5px;
+
     font-weight: 700;
+
     color: #4a3038;
-    text-shadow: 0 1px 5px rgba(255,255,255,.8);
+
+    text-shadow:
+        0 1px 5px rgba(255,255,255,.8);
 }
 
 /* =========================
@@ -151,14 +216,19 @@ body {
 
 .intro {
     background: var(--light-pink);
+
     text-align: center;
+
     min-height: 70vh;
+
     display: flex;
+
     align-items: center;
 }
 
 .intro-text {
     max-width: 900px;
+
     margin: auto;
 
     font-family: "Cormorant Garamond", serif;
@@ -180,40 +250,56 @@ body {
 }
 
 /* =========================
-   LOCATION
+   LOCATION PAGE
 ========================= */
 
 .location {
     background: var(--soft-pink);
+
     text-align: center;
+
     min-height: 70vh;
 
     display: flex;
+
     align-items: center;
 }
 
 .location-label {
     font-size: 11px;
+
     letter-spacing: 4px;
+
     text-transform: uppercase;
+
     color: #633b4d;
+
     margin-bottom: 20px;
+
     font-weight: 700;
 }
 
 .location h2 {
     font-family: "Cormorant Garamond", serif;
+
     font-size: clamp(40px, 6vw, 65px);
+
     font-weight: 600;
+
     color: #633b4d;
+
     margin-bottom: 20px;
 }
 
 .location p {
     color: #452d35;
+
     font-size: 18px;
+
     line-height: 1.9;
+
     margin-bottom: 30px;
+
     font-weight: 600;
 }
 
@@ -241,6 +327,7 @@ body {
 
 .map-button:hover {
     background: #633b4d;
+
     color: white;
 }
 
@@ -250,14 +337,19 @@ body {
 
 footer {
     background: #e8ccd7;
+
     padding: 35px 20px;
+
     text-align: center;
 }
 
 footer p {
     font-size: 10px;
+
     letter-spacing: 3px;
+
     color: #4f343d;
+
     font-weight: 700;
 }
 
@@ -331,19 +423,31 @@ footer p {
 
     .hero h1 {
         font-size: 52px;
+
         line-height: 1;
+
         margin-bottom: 25px;
     }
 
     .party {
         font-size: 25px;
+
         letter-spacing: 1px;
+
+        margin-bottom: 8px;
+    }
+
+    .location-name {
+        font-size: 25px;
+
         margin-bottom: 20px;
     }
 
     .date-time {
         font-size: 25px;
+
         letter-spacing: 1px;
+
         margin-bottom: 35px;
     }
 
@@ -361,6 +465,7 @@ footer p {
 
     .countdown-label {
         font-size: 8px;
+
         letter-spacing: 1px;
     }
 
@@ -374,6 +479,7 @@ footer p {
 
     .intro-text {
         font-size: 27px;
+
         line-height: 1.55;
     }
 
@@ -398,6 +504,10 @@ footer p {
     }
 
     .party {
+        font-size: 22px;
+    }
+
+    .location-name {
         font-size: 22px;
     }
 
@@ -447,6 +557,10 @@ footer p {
 
         <div class="party">
             Հրավիրում ենք PAJAMAS PARTY-ին
+        </div>
+
+        <div class="location-name">
+            COMPASS KIDS ZONE
         </div>
 
         <div class="date-time">

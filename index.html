@@ -9,24 +9,33 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
+
+/* =========================
+   COLORS
+========================= */
 
 :root {
     --pink: #f6dce5;
     --light-pink: #fdf3f6;
     --soft-pink: #f8e8ed;
-    --rose: #c98fa3;
-    --deep-rose: #9f657a;
 
-    --dark: #3d3034;
-    --dark-text: #4a3038;
-    --muted: #765f67;
+    --rose: #b8758c;
+    --deep-rose: #7f4d61;
+
+    --dark: #3a252d;
+    --dark-text: #452b34;
+    --muted: #654b54;
 
     --white: #ffffff;
 }
+
+
+/* =========================
+   RESET
+========================= */
 
 * {
     margin: 0;
@@ -44,15 +53,18 @@ body {
     color: var(--dark);
 }
 
+
 /* =========================
    HERO
 ========================= */
 
 .hero {
     min-height: 100vh;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     text-align: center;
 
     position: relative;
@@ -60,8 +72,8 @@ body {
 
     background:
         linear-gradient(
-            rgba(45, 25, 32, .58),
-            rgba(45, 25, 32, .68)
+            rgba(45, 25, 32, 0.58),
+            rgba(45, 25, 32, 0.68)
         ),
         url("https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=2000&q=90");
 
@@ -70,44 +82,73 @@ body {
 }
 
 .hero-content {
-    width: 92%;
+    width: 94%;
     max-width: 1100px;
-    padding: 70px 20px;
-    color: white;
+
+    padding: 60px 20px;
+
+    color: #ffffff;
+
     animation: fadeIn 1.5s ease;
 }
 
+
+/* =========================
+   HERO SMALL TITLE
+========================= */
+
 .small-title {
     font-size: 12px;
+
     letter-spacing: 5px;
+
     text-transform: uppercase;
+
     margin-bottom: 28px;
-    font-weight: 500;
+
+    font-weight: 600;
+
     color: #ffffff;
+
+    text-shadow:
+        0 2px 8px rgba(0,0,0,.45);
 }
+
+
+/* =========================
+   MAIN TITLE
+========================= */
 
 .hero h1 {
     font-family: "Cormorant Garamond", serif;
 
     font-size: clamp(48px, 9vw, 105px);
 
-    font-weight: 400;
-    line-height: .95;
+    font-weight: 500;
+
+    line-height: 0.95;
 
     color: #ffffff;
 
     letter-spacing: -1px;
 
-    text-shadow:
-        0 3px 18px rgba(0,0,0,.35);
+    margin-bottom: 32px;
 
-    margin-bottom: 30px;
+    text-shadow:
+        0 3px 20px rgba(0,0,0,.55);
 }
+
+
+/* =========================
+   DATE
+========================= */
 
 .date-time {
     font-family: "Cormorant Garamond", serif;
 
-    font-size: clamp(25px, 4vw, 38px);
+    font-size: clamp(26px, 4vw, 40px);
+
+    font-weight: 500;
 
     color: #ffffff;
 
@@ -116,8 +157,13 @@ body {
     margin-bottom: 18px;
 
     text-shadow:
-        0 2px 10px rgba(0,0,0,.35);
+        0 3px 12px rgba(0,0,0,.55);
 }
+
+
+/* =========================
+   PARTY
+========================= */
 
 .party {
     font-size: 13px;
@@ -131,8 +177,9 @@ body {
     margin-bottom: 55px;
 
     text-shadow:
-        0 2px 8px rgba(0,0,0,.4);
+        0 2px 10px rgba(0,0,0,.55);
 }
+
 
 /* =========================
    COUNTDOWN
@@ -140,12 +187,13 @@ body {
 
 .countdown {
     display: flex;
+
     justify-content: center;
     align-items: center;
 
     gap: clamp(18px, 5vw, 55px);
 
-    color: #3d252d;
+    color: #ffffff;
 
     margin-top: 15px;
 }
@@ -153,22 +201,22 @@ body {
 .countdown-item {
     min-width: 70px;
 
-    color: #3d252d;
+    color: #ffffff;
 }
 
 .countdown-number {
     font-family: "Cormorant Garamond", serif;
 
-    font-size: clamp(36px, 6vw, 58px);
+    font-size: clamp(38px, 6vw, 60px);
 
     font-weight: 600;
 
     line-height: 1;
 
-    color: #3d252d;
+    color: #ffffff;
 
     text-shadow:
-        0 2px 10px rgba(255,255,255,.65);
+        0 3px 15px rgba(0,0,0,.65);
 }
 
 .countdown-label {
@@ -180,14 +228,15 @@ body {
 
     font-weight: 600;
 
-    color: #4f343d;
+    color: #ffffff;
 
     text-shadow:
-        0 1px 5px rgba(255,255,255,.55);
+        0 2px 8px rgba(0,0,0,.65);
 }
 
+
 /* =========================
-   SECTIONS
+   GENERAL SECTION
 ========================= */
 
 .section {
@@ -198,6 +247,7 @@ body {
     max-width: 1050px;
     margin: auto;
 }
+
 
 /* =========================
    INTRO
@@ -214,15 +264,15 @@ body {
 
     font-size: clamp(38px, 6vw, 62px);
 
-    font-weight: 400;
+    font-weight: 500;
 
-    color: var(--deep-rose);
+    color: #75475a;
 
     margin-bottom: 30px;
 }
 
 .intro-text {
-    max-width: 760px;
+    max-width: 780px;
 
     margin: auto;
 
@@ -230,13 +280,11 @@ body {
 
     line-height: 2;
 
-    color: #4a3038;
+    color: #452b34;
 
     font-weight: 500;
-
-    text-shadow:
-        0 1px 5px rgba(255,255,255,.45);
 }
+
 
 /* =========================
    DETAILS
@@ -256,13 +304,13 @@ body {
 }
 
 .detail-card {
-    background: rgba(255,255,255,.58);
+    background: rgba(255,255,255,.72);
 
     padding: 45px 25px;
 
     text-align: center;
 
-    border: 1px solid rgba(159,101,122,.12);
+    border: 1px solid rgba(127,77,97,.18);
 
     transition: .4s ease;
 }
@@ -271,7 +319,7 @@ body {
     transform: translateY(-5px);
 
     box-shadow:
-        0 15px 35px rgba(120,70,90,.12);
+        0 15px 35px rgba(90,50,65,.15);
 }
 
 .detail-number {
@@ -279,7 +327,9 @@ body {
 
     font-size: 50px;
 
-    color: var(--deep-rose);
+    color: #75475a;
+
+    font-weight: 500;
 
     margin-bottom: 8px;
 }
@@ -291,7 +341,7 @@ body {
 
     text-transform: uppercase;
 
-    color: #674b54;
+    color: #452b34;
 
     margin-bottom: 12px;
 
@@ -303,8 +353,11 @@ body {
 
     line-height: 1.8;
 
-    color: #705b62;
+    color: #5b414a;
+
+    font-weight: 500;
 }
+
 
 /* =========================
    LOCATION
@@ -323,9 +376,11 @@ body {
 
     text-transform: uppercase;
 
-    color: var(--rose);
+    color: #75475a;
 
     margin-bottom: 20px;
+
+    font-weight: 600;
 }
 
 .location h2 {
@@ -333,31 +388,38 @@ body {
 
     font-size: clamp(40px, 6vw, 65px);
 
-    font-weight: 400;
+    font-weight: 500;
 
-    color: var(--deep-rose);
+    color: #75475a;
 
     margin-bottom: 20px;
 }
 
 .location p {
-    color: #705b62;
+    color: #4b323a;
 
     font-size: 14px;
 
-    line-height: 1.8;
+    line-height: 1.9;
 
     margin-bottom: 30px;
+
+    font-weight: 500;
 }
+
+
+/* =========================
+   MAP BUTTON
+========================= */
 
 .map-button {
     display: inline-block;
 
     padding: 14px 28px;
 
-    border: 1px solid var(--rose);
+    border: 1px solid #9d6379;
 
-    color: var(--deep-rose);
+    color: #633f4e;
 
     text-decoration: none;
 
@@ -367,17 +429,20 @@ body {
 
     text-transform: uppercase;
 
+    font-weight: 600;
+
     transition: .3s ease;
 }
 
 .map-button:hover {
-    background: var(--deep-rose);
+    background: #75475a;
 
     color: white;
 }
 
+
 /* =========================
-   FINAL
+   FINAL SECTION
 ========================= */
 
 .final {
@@ -394,7 +459,7 @@ body {
     background:
         linear-gradient(
             rgba(80, 40, 52, .55),
-            rgba(80, 40, 52, .65)
+            rgba(80, 40, 52, .68)
         ),
         url("https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=2000&q=90");
 
@@ -415,6 +480,8 @@ body {
     letter-spacing: 5px;
 
     margin-bottom: 25px;
+
+    font-weight: 600;
 }
 
 .final h2 {
@@ -422,9 +489,12 @@ body {
 
     font-size: clamp(45px, 8vw, 85px);
 
-    font-weight: 400;
+    font-weight: 500;
 
     margin-bottom: 25px;
+
+    text-shadow:
+        0 3px 15px rgba(0,0,0,.45);
 }
 
 .final p {
@@ -433,14 +503,17 @@ body {
     font-size: 25px;
 
     font-style: italic;
+
+    color: #ffffff;
 }
+
 
 /* =========================
    FOOTER
 ========================= */
 
 footer {
-    background: #ead0da;
+    background: #e8ccd7;
 
     padding: 35px 20px;
 
@@ -452,8 +525,11 @@ footer p {
 
     letter-spacing: 3px;
 
-    color: #765963;
+    color: #573b44;
+
+    font-weight: 600;
 }
+
 
 /* =========================
    MUSIC BUTTON
@@ -472,9 +548,9 @@ footer p {
 
     border-radius: 50%;
 
-    border: 1px solid rgba(255,255,255,.7);
+    border: 1px solid rgba(255,255,255,.8);
 
-    background: rgba(80,40,52,.72);
+    background: rgba(80,40,52,.78);
 
     color: white;
 
@@ -493,6 +569,7 @@ footer p {
     transform: scale(1.08);
 }
 
+
 /* =========================
    ANIMATION
 ========================= */
@@ -501,29 +578,25 @@ footer p {
 
     from {
         opacity: 0;
-
-        transform:
-            translateY(20px);
+        transform: translateY(20px);
     }
 
     to {
         opacity: 1;
-
-        transform:
-            translateY(0);
+        transform: translateY(0);
     }
 
 }
 
+
 /* =========================
-   MOBILE
+   TABLET / MOBILE
 ========================= */
 
 @media (max-width: 700px) {
 
     .hero-content {
-        padding:
-            50px 15px;
+        padding: 50px 15px;
     }
 
     .small-title {
@@ -584,8 +657,9 @@ footer p {
 
 }
 
+
 /* =========================
-   VERY SMALL MOBILE
+   SMALL PHONES
 ========================= */
 
 @media (max-width: 400px) {
@@ -624,7 +698,7 @@ footer p {
 
 
 <!-- =========================
-     HERO
+     FIRST PAGE
 ========================= -->
 
 <section class="hero">
@@ -951,8 +1025,11 @@ function updateCountdown() {
     if (distance <= 0) {
 
         document.getElementById("days").innerText = "00";
+
         document.getElementById("hours").innerText = "00";
+
         document.getElementById("minutes").innerText = "00";
+
         document.getElementById("seconds").innerText = "00";
 
         return;

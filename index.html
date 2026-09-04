@@ -25,12 +25,7 @@
     --dark: #352229;
     --dark-text: #3f2830;
     --muted: #5b424b;
-
-    --white: #ffffff;
 }
-
-
-/* RESET */
 
 * {
     margin: 0;
@@ -50,7 +45,7 @@ body {
 
 
 /* =========================
-   HERO
+   FIRST PAGE
 ========================= */
 
 .hero {
@@ -88,10 +83,10 @@ body {
 }
 
 
-/* FIRST PAGE SMALL TEXT */
+/* You are invited */
 
 .small-title {
-    font-size: 12px;
+    font-size: 17px;
 
     letter-spacing: 5px;
 
@@ -99,18 +94,16 @@ body {
 
     margin-bottom: 28px;
 
-    font-weight: 600;
+    font-weight: 700;
 
-    color: #4a3038;
+    color: #3a252d;
 
     text-shadow:
-        0 1px 4px rgba(255,255,255,.7);
+        0 2px 8px rgba(255,255,255,.85);
 }
 
 
-/* =========================
-   MAIN TITLE
-========================= */
+/* Main title */
 
 .hero h1 {
     font-family: "Cormorant Garamond", serif;
@@ -119,7 +112,7 @@ body {
 
     font-weight: 500;
 
-    line-height: .95;
+    line-height: 1;
 
     color: #3b252d;
 
@@ -128,13 +121,11 @@ body {
     margin-bottom: 32px;
 
     text-shadow:
-        0 2px 8px rgba(255,255,255,.75);
+        0 2px 8px rgba(255,255,255,.8);
 }
 
 
-/* =========================
-   DATE / TIME
-========================= */
+/* Date */
 
 .date-time {
     font-family: "Cormorant Garamond", serif;
@@ -150,33 +141,29 @@ body {
     margin-bottom: 18px;
 
     text-shadow:
-        0 2px 7px rgba(255,255,255,.75);
+        0 2px 7px rgba(255,255,255,.8);
 }
 
 
-/* =========================
-   PAJAMAS PARTY
-========================= */
+/* Pajamas Party */
 
 .party {
-    font-size: 13px;
+    font-size: 18px;
 
-    letter-spacing: 6px;
+    letter-spacing: 7px;
 
     font-weight: 700;
 
-    color: #4a3038;
+    color: #3a252d;
 
     margin-bottom: 55px;
 
     text-shadow:
-        0 1px 6px rgba(255,255,255,.75);
+        0 2px 8px rgba(255,255,255,.85);
 }
 
 
-/* =========================
-   COUNTDOWN
-========================= */
+/* Countdown */
 
 .countdown {
     display: flex;
@@ -229,7 +216,7 @@ body {
 
 
 /* =========================
-   GENERAL SECTION
+   GENERAL SECTIONS
 ========================= */
 
 .section {
@@ -243,7 +230,7 @@ body {
 
 
 /* =========================
-   INTRO
+   SECOND PAGE
 ========================= */
 
 .intro {
@@ -252,30 +239,33 @@ body {
     text-align: center;
 }
 
-.intro-title {
-    font-family: "Cormorant Garamond", serif;
 
-    font-size: clamp(38px, 6vw, 62px);
+/* No "Սիրով սպասում ենք Ձեզ" */
 
-    font-weight: 600;
 
-    color: #633b4d;
-
-    margin-bottom: 30px;
-}
+/* Beautiful large invitation text */
 
 .intro-text {
-    max-width: 780px;
+    max-width: 900px;
 
     margin: auto;
 
-    font-size: 15px;
+    font-family: "Cormorant Garamond", serif;
 
-    line-height: 2;
+    font-size: clamp(25px, 4vw, 38px);
 
-    color: #3f2830;
+    line-height: 1.6;
 
-    font-weight: 600;
+    color: #352229;
+
+    font-weight: 500;
+
+    letter-spacing: 0.3px;
+
+    text-align: center;
+
+    text-shadow:
+        0 1px 2px rgba(255,255,255,.5);
 }
 
 
@@ -401,9 +391,7 @@ body {
 }
 
 
-/* =========================
-   MAP BUTTON
-========================= */
+/* Google Maps button */
 
 .map-button {
     display: inline-block;
@@ -435,7 +423,7 @@ body {
 
 
 /* =========================
-   FINAL SECTION
+   FINAL PAGE
 ========================= */
 
 .final {
@@ -467,22 +455,45 @@ body {
     padding: 40px;
 }
 
+
+/* SAVE THE DATE */
+
 .final-small {
     font-size: 11px;
 
     letter-spacing: 5px;
 
-    margin-bottom: 25px;
+    margin-bottom: 12px;
 
     font-weight: 700;
 
     color: #4a3038;
 }
 
+
+/* Date under SAVE THE DATE */
+
+.final-date {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 24px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    color: #3a252d;
+
+    margin-bottom: 18px;
+}
+
+
+/* Smaller birthday title */
+
 .final h2 {
     font-family: "Cormorant Garamond", serif;
 
-    font-size: clamp(45px, 8vw, 85px);
+    font-size: clamp(32px, 5vw, 55px);
 
     font-weight: 600;
 
@@ -494,14 +505,17 @@ body {
         0 2px 8px rgba(255,255,255,.8);
 }
 
+
+/* Final message */
+
 .final p {
     font-family: "Cormorant Garamond", serif;
 
-    font-size: 25px;
+    font-size: 28px;
 
     font-style: italic;
 
-    color: #452d35;
+    color: #352229;
 
     font-weight: 600;
 }
@@ -603,7 +617,7 @@ footer p {
     }
 
     .small-title {
-        font-size: 10px;
+        font-size: 13px;
 
         letter-spacing: 3px;
 
@@ -625,7 +639,7 @@ footer p {
     }
 
     .party {
-        font-size: 11px;
+        font-size: 13px;
 
         letter-spacing: 4px;
 
@@ -654,8 +668,17 @@ footer p {
         padding: 75px 20px;
     }
 
+    .intro-text {
+        font-size: 27px;
+        line-height: 1.55;
+    }
+
     .details-grid {
         grid-template-columns: 1fr;
+    }
+
+    .final p {
+        font-size: 25px;
     }
 
 }
@@ -691,6 +714,10 @@ footer p {
         font-size: 7px;
     }
 
+    .intro-text {
+        font-size: 24px;
+    }
+
 }
 
 </style>
@@ -713,7 +740,8 @@ footer p {
         </div>
 
         <h1>
-            Աստղը դառնում է 8 տարեկան
+            Աստղը դառնում է<br>
+            8 տարեկան
         </h1>
 
         <div class="date-time">
@@ -797,20 +825,17 @@ footer p {
 
 
 <!-- =========================
-     INTRO
+     SECOND PAGE
 ========================= -->
 
 <section class="section intro">
 
     <div class="section-inner">
 
-        <h2 class="intro-title">
-            Սիրով սպասում ենք Ձեզ
-        </h2>
-
         <p class="intro-text">
             Սիրով հրավիրում ենք Ձեզ մասնակցելու
             Աստղի 8-րդ տարեդարձին։
+            <br><br>
             Սպասվում է ուրախ և գեղեցիկ օր՝
             լի խաղերով, ժպիտներով և
             անմոռանալի պահերով։
@@ -934,7 +959,7 @@ footer p {
 
 
 <!-- =========================
-     FINAL
+     FINAL PAGE
 ========================= -->
 
 <section class="final">
@@ -945,12 +970,16 @@ footer p {
             SAVE THE DATE
         </div>
 
+        <div class="final-date">
+            ՍԵՊՏԵՄԲԵՐԻ 6
+        </div>
+
         <h2>
             Աստղի 8-րդ տարեդարձ
         </h2>
 
         <p>
-            Կհանդիպենք այնտեղ ♡
+            Կհանդիպենք այնտեղ, սիրով սպասում ենք ♡
         </p>
 
     </div>
@@ -992,7 +1021,7 @@ footer p {
     loop>
 
     <source
-        src="https://cdn.pixabay.com/audio/2022/10/25/audio_946b8e4f9e.mp3"
+        src="https://cdn.pixabay.com/audio/2022/10/25/audio_946b8e4f9.mp3"
         type="audio/mpeg">
 
 </audio>
@@ -1001,7 +1030,10 @@ footer p {
 
 <script>
 
-/* COUNTDOWN */
+
+/* =========================
+   COUNTDOWN
+========================= */
 
 const birthdayDate =
     new Date(
@@ -1021,8 +1053,11 @@ function updateCountdown() {
     if (distance <= 0) {
 
         document.getElementById("days").innerText = "00";
+
         document.getElementById("hours").innerText = "00";
+
         document.getElementById("minutes").innerText = "00";
+
         document.getElementById("seconds").innerText = "00";
 
         return;
@@ -1093,7 +1128,10 @@ setInterval(
 );
 
 
-/* MUSIC */
+
+/* =========================
+   MUSIC
+========================= */
 
 const music =
     document.getElementById(

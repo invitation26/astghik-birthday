@@ -9,33 +9,28 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
-
-/* =========================
-   COLORS
-========================= */
 
 :root {
     --pink: #f6dce5;
     --light-pink: #fdf3f6;
     --soft-pink: #f8e8ed;
 
-    --rose: #b8758c;
-    --deep-rose: #7f4d61;
+    --rose: #8a5268;
+    --deep-rose: #633b4d;
 
-    --dark: #3a252d;
-    --dark-text: #452b34;
-    --muted: #654b54;
+    --dark: #352229;
+    --dark-text: #3f2830;
+    --muted: #5b424b;
 
     --white: #ffffff;
 }
 
 
-/* =========================
-   RESET
-========================= */
+/* RESET */
 
 * {
     margin: 0;
@@ -72,8 +67,8 @@ body {
 
     background:
         linear-gradient(
-            rgba(45, 25, 32, 0.58),
-            rgba(45, 25, 32, 0.68)
+            rgba(248, 224, 232, .48),
+            rgba(251, 236, 241, .58)
         ),
         url("https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=2000&q=90");
 
@@ -87,15 +82,13 @@ body {
 
     padding: 60px 20px;
 
-    color: #ffffff;
+    color: #3b252d;
 
     animation: fadeIn 1.5s ease;
 }
 
 
-/* =========================
-   HERO SMALL TITLE
-========================= */
+/* FIRST PAGE SMALL TEXT */
 
 .small-title {
     font-size: 12px;
@@ -108,10 +101,10 @@ body {
 
     font-weight: 600;
 
-    color: #ffffff;
+    color: #4a3038;
 
     text-shadow:
-        0 2px 8px rgba(0,0,0,.45);
+        0 1px 4px rgba(255,255,255,.7);
 }
 
 
@@ -126,21 +119,21 @@ body {
 
     font-weight: 500;
 
-    line-height: 0.95;
+    line-height: .95;
 
-    color: #ffffff;
+    color: #3b252d;
 
     letter-spacing: -1px;
 
     margin-bottom: 32px;
 
     text-shadow:
-        0 3px 20px rgba(0,0,0,.55);
+        0 2px 8px rgba(255,255,255,.75);
 }
 
 
 /* =========================
-   DATE
+   DATE / TIME
 ========================= */
 
 .date-time {
@@ -148,21 +141,21 @@ body {
 
     font-size: clamp(26px, 4vw, 40px);
 
-    font-weight: 500;
+    font-weight: 600;
 
-    color: #ffffff;
+    color: #3f2830;
 
     letter-spacing: 2px;
 
     margin-bottom: 18px;
 
     text-shadow:
-        0 3px 12px rgba(0,0,0,.55);
+        0 2px 7px rgba(255,255,255,.75);
 }
 
 
 /* =========================
-   PARTY
+   PAJAMAS PARTY
 ========================= */
 
 .party {
@@ -170,14 +163,14 @@ body {
 
     letter-spacing: 6px;
 
-    font-weight: 600;
+    font-weight: 700;
 
-    color: #ffffff;
+    color: #4a3038;
 
     margin-bottom: 55px;
 
     text-shadow:
-        0 2px 10px rgba(0,0,0,.55);
+        0 1px 6px rgba(255,255,255,.75);
 }
 
 
@@ -193,7 +186,7 @@ body {
 
     gap: clamp(18px, 5vw, 55px);
 
-    color: #ffffff;
+    color: #3b252d;
 
     margin-top: 15px;
 }
@@ -201,7 +194,7 @@ body {
 .countdown-item {
     min-width: 70px;
 
-    color: #ffffff;
+    color: #3b252d;
 }
 
 .countdown-number {
@@ -209,14 +202,14 @@ body {
 
     font-size: clamp(38px, 6vw, 60px);
 
-    font-weight: 600;
+    font-weight: 700;
 
     line-height: 1;
 
-    color: #ffffff;
+    color: #352229;
 
     text-shadow:
-        0 3px 15px rgba(0,0,0,.65);
+        0 2px 7px rgba(255,255,255,.8);
 }
 
 .countdown-label {
@@ -226,12 +219,12 @@ body {
 
     letter-spacing: 1.5px;
 
-    font-weight: 600;
+    font-weight: 700;
 
-    color: #ffffff;
+    color: #4a3038;
 
     text-shadow:
-        0 2px 8px rgba(0,0,0,.65);
+        0 1px 5px rgba(255,255,255,.8);
 }
 
 
@@ -264,9 +257,9 @@ body {
 
     font-size: clamp(38px, 6vw, 62px);
 
-    font-weight: 500;
+    font-weight: 600;
 
-    color: #75475a;
+    color: #633b4d;
 
     margin-bottom: 30px;
 }
@@ -280,9 +273,9 @@ body {
 
     line-height: 2;
 
-    color: #452b34;
+    color: #3f2830;
 
-    font-weight: 500;
+    font-weight: 600;
 }
 
 
@@ -310,7 +303,7 @@ body {
 
     text-align: center;
 
-    border: 1px solid rgba(127,77,97,.18);
+    border: 1px solid rgba(99,59,77,.18);
 
     transition: .4s ease;
 }
@@ -327,9 +320,9 @@ body {
 
     font-size: 50px;
 
-    color: #75475a;
+    color: #633b4d;
 
-    font-weight: 500;
+    font-weight: 600;
 
     margin-bottom: 8px;
 }
@@ -341,11 +334,11 @@ body {
 
     text-transform: uppercase;
 
-    color: #452b34;
+    color: #3f2830;
 
     margin-bottom: 12px;
 
-    font-weight: 600;
+    font-weight: 700;
 }
 
 .detail-text {
@@ -353,9 +346,9 @@ body {
 
     line-height: 1.8;
 
-    color: #5b414a;
+    color: #513941;
 
-    font-weight: 500;
+    font-weight: 600;
 }
 
 
@@ -376,11 +369,11 @@ body {
 
     text-transform: uppercase;
 
-    color: #75475a;
+    color: #633b4d;
 
     margin-bottom: 20px;
 
-    font-weight: 600;
+    font-weight: 700;
 }
 
 .location h2 {
@@ -388,15 +381,15 @@ body {
 
     font-size: clamp(40px, 6vw, 65px);
 
-    font-weight: 500;
+    font-weight: 600;
 
-    color: #75475a;
+    color: #633b4d;
 
     margin-bottom: 20px;
 }
 
 .location p {
-    color: #4b323a;
+    color: #452d35;
 
     font-size: 14px;
 
@@ -404,7 +397,7 @@ body {
 
     margin-bottom: 30px;
 
-    font-weight: 500;
+    font-weight: 600;
 }
 
 
@@ -417,9 +410,9 @@ body {
 
     padding: 14px 28px;
 
-    border: 1px solid #9d6379;
+    border: 1px solid #8a5268;
 
-    color: #633f4e;
+    color: #563444;
 
     text-decoration: none;
 
@@ -429,13 +422,13 @@ body {
 
     text-transform: uppercase;
 
-    font-weight: 600;
+    font-weight: 700;
 
     transition: .3s ease;
 }
 
 .map-button:hover {
-    background: #75475a;
+    background: #633b4d;
 
     color: white;
 }
@@ -458,8 +451,8 @@ body {
 
     background:
         linear-gradient(
-            rgba(80, 40, 52, .55),
-            rgba(80, 40, 52, .68)
+            rgba(248, 224, 232, .48),
+            rgba(251, 236, 241, .58)
         ),
         url("https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=2000&q=90");
 
@@ -469,7 +462,7 @@ body {
 }
 
 .final-content {
-    color: white;
+    color: #3b252d;
 
     padding: 40px;
 }
@@ -481,7 +474,9 @@ body {
 
     margin-bottom: 25px;
 
-    font-weight: 600;
+    font-weight: 700;
+
+    color: #4a3038;
 }
 
 .final h2 {
@@ -489,12 +484,14 @@ body {
 
     font-size: clamp(45px, 8vw, 85px);
 
-    font-weight: 500;
+    font-weight: 600;
 
     margin-bottom: 25px;
 
+    color: #3b252d;
+
     text-shadow:
-        0 3px 15px rgba(0,0,0,.45);
+        0 2px 8px rgba(255,255,255,.8);
 }
 
 .final p {
@@ -504,7 +501,9 @@ body {
 
     font-style: italic;
 
-    color: #ffffff;
+    color: #452d35;
+
+    font-weight: 600;
 }
 
 
@@ -525,9 +524,9 @@ footer p {
 
     letter-spacing: 3px;
 
-    color: #573b44;
+    color: #4f343d;
 
-    font-weight: 600;
+    font-weight: 700;
 }
 
 
@@ -548,11 +547,11 @@ footer p {
 
     border-radius: 50%;
 
-    border: 1px solid rgba(255,255,255,.8);
+    border: 1px solid rgba(99,59,77,.4);
 
-    background: rgba(80,40,52,.78);
+    background: rgba(255,255,255,.72);
 
-    color: white;
+    color: #633b4d;
 
     cursor: pointer;
 
@@ -567,6 +566,10 @@ footer p {
 
 .music-button:hover {
     transform: scale(1.08);
+
+    background: #633b4d;
+
+    color: white;
 }
 
 
@@ -590,7 +593,7 @@ footer p {
 
 
 /* =========================
-   TABLET / MOBILE
+   MOBILE
 ========================= */
 
 @media (max-width: 700px) {
@@ -806,13 +809,11 @@ footer p {
         </h2>
 
         <p class="intro-text">
-
             Սիրով հրավիրում ենք Ձեզ մասնակցելու
             Աստղի 8-րդ տարեդարձին։
             Սպասվում է ուրախ և գեղեցիկ օր՝
             լի խաղերով, ժպիտներով և
             անմոռանալի պահերով։
-
         </p>
 
     </div>
@@ -911,13 +912,10 @@ footer p {
         </h2>
 
         <p>
-
             Սեպտեմբերի 6 · 13:00–17:00<br>
-
             Սիրով սպասում ենք Ձեզ
             միասին նշելու Աստղի
             8-րդ տարեդարձը։
-
         </p>
 
         <a
@@ -1003,9 +1001,7 @@ footer p {
 
 <script>
 
-/* =========================
-   COUNTDOWN
-========================= */
+/* COUNTDOWN */
 
 const birthdayDate =
     new Date(
@@ -1025,11 +1021,8 @@ function updateCountdown() {
     if (distance <= 0) {
 
         document.getElementById("days").innerText = "00";
-
         document.getElementById("hours").innerText = "00";
-
         document.getElementById("minutes").innerText = "00";
-
         document.getElementById("seconds").innerText = "00";
 
         return;
@@ -1100,10 +1093,7 @@ setInterval(
 );
 
 
-
-/* =========================
-   MUSIC
-========================= */
+/* MUSIC */
 
 const music =
     document.getElementById(

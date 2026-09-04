@@ -1,7 +1,7 @@
-```html
 <!DOCTYPE html>
 <html lang="hy">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -15,16 +15,12 @@
 <style>
 
 :root {
-    --pink: #f6dce5;
     --light-pink: #fdf3f6;
     --soft-pink: #f8e8ed;
-
     --rose: #8a5268;
     --deep-rose: #633b4d;
-
     --dark: #352229;
     --dark-text: #3f2830;
-    --muted: #5b424b;
 }
 
 * {
@@ -43,20 +39,16 @@ body {
     color: var(--dark);
 }
 
-
 /* =========================
    FIRST PAGE
 ========================= */
 
 .hero {
     min-height: 100vh;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     text-align: center;
-
     position: relative;
     overflow: hidden;
 
@@ -74,149 +66,78 @@ body {
 .hero-content {
     width: 94%;
     max-width: 1100px;
-
     padding: 60px 20px;
-
     color: #3b252d;
-
     animation: fadeIn 1.5s ease;
 }
 
-
-/* You are invited */
-
-.small-title {
-    font-size: 17px;
-
-    letter-spacing: 5px;
-
-    text-transform: uppercase;
-
-    margin-bottom: 28px;
-
-    font-weight: 700;
-
-    color: #3a252d;
-
-    text-shadow:
-        0 2px 8px rgba(255,255,255,.85);
-}
-
-
-/* Main title */
-
 .hero h1 {
     font-family: "Cormorant Garamond", serif;
-
     font-size: clamp(48px, 9vw, 105px);
-
     font-weight: 500;
-
     line-height: 1;
-
     color: #3b252d;
-
     letter-spacing: -1px;
-
     margin-bottom: 32px;
-
-    text-shadow:
-        0 2px 8px rgba(255,255,255,.8);
+    text-shadow: 0 2px 8px rgba(255,255,255,.8);
 }
 
-
-/* Date */
+.party {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(25px, 4vw, 38px);
+    letter-spacing: 1px;
+    font-weight: 600;
+    color: #3a252d;
+    margin-bottom: 28px;
+    text-shadow: 0 2px 8px rgba(255,255,255,.85);
+}
 
 .date-time {
     font-family: "Cormorant Garamond", serif;
-
     font-size: clamp(26px, 4vw, 40px);
-
     font-weight: 600;
-
     color: #3f2830;
-
     letter-spacing: 2px;
-
-    margin-bottom: 18px;
-
-    text-shadow:
-        0 2px 7px rgba(255,255,255,.8);
+    margin-bottom: 45px;
+    text-shadow: 0 2px 7px rgba(255,255,255,.8);
 }
 
-
-/* Pajamas Party */
-
-.party {
-    font-size: 18px;
-
-    letter-spacing: 7px;
-
-    font-weight: 700;
-
-    color: #3a252d;
-
-    margin-bottom: 55px;
-
-    text-shadow:
-        0 2px 8px rgba(255,255,255,.85);
-}
-
-
-/* Countdown */
+/* COUNTDOWN */
 
 .countdown {
     display: flex;
-
     justify-content: center;
     align-items: center;
-
     gap: clamp(18px, 5vw, 55px);
-
     color: #3b252d;
-
     margin-top: 15px;
 }
 
 .countdown-item {
     min-width: 70px;
-
     color: #3b252d;
 }
 
 .countdown-number {
     font-family: "Cormorant Garamond", serif;
-
     font-size: clamp(38px, 6vw, 60px);
-
     font-weight: 700;
-
     line-height: 1;
-
     color: #352229;
-
-    text-shadow:
-        0 2px 7px rgba(255,255,255,.8);
+    text-shadow: 0 2px 7px rgba(255,255,255,.8);
 }
 
 .countdown-label {
     margin-top: 9px;
-
     font-size: 10px;
-
     letter-spacing: 1.5px;
-
     font-weight: 700;
-
     color: #4a3038;
-
-    text-shadow:
-        0 1px 5px rgba(255,255,255,.8);
+    text-shadow: 0 1px 5px rgba(255,255,255,.8);
 }
 
-
 /* =========================
-   GENERAL SECTIONS
+   INVITATION PAGE
 ========================= */
 
 .section {
@@ -228,31 +149,21 @@ body {
     margin: auto;
 }
 
-
-/* =========================
-   SECOND PAGE
-========================= */
-
 .intro {
     background: var(--light-pink);
-
     text-align: center;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
 }
-
-
-/* No "Սիրով սպասում ենք Ձեզ" */
-
-
-/* Beautiful large invitation text */
 
 .intro-text {
     max-width: 900px;
-
     margin: auto;
 
     font-family: "Cormorant Garamond", serif;
 
-    font-size: clamp(25px, 4vw, 38px);
+    font-size: clamp(29px, 4.5vw, 45px);
 
     line-height: 1.6;
 
@@ -268,130 +179,43 @@ body {
         0 1px 2px rgba(255,255,255,.5);
 }
 
-
-/* =========================
-   DETAILS
-========================= */
-
-.details {
-    background: var(--soft-pink);
-}
-
-.details-grid {
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap: 25px;
-}
-
-.detail-card {
-    background: rgba(255,255,255,.72);
-
-    padding: 45px 25px;
-
-    text-align: center;
-
-    border: 1px solid rgba(99,59,77,.18);
-
-    transition: .4s ease;
-}
-
-.detail-card:hover {
-    transform: translateY(-5px);
-
-    box-shadow:
-        0 15px 35px rgba(90,50,65,.15);
-}
-
-.detail-number {
-    font-family: "Cormorant Garamond", serif;
-
-    font-size: 50px;
-
-    color: #633b4d;
-
-    font-weight: 600;
-
-    margin-bottom: 8px;
-}
-
-.detail-title {
-    font-size: 12px;
-
-    letter-spacing: 2px;
-
-    text-transform: uppercase;
-
-    color: #3f2830;
-
-    margin-bottom: 12px;
-
-    font-weight: 700;
-}
-
-.detail-text {
-    font-size: 13px;
-
-    line-height: 1.8;
-
-    color: #513941;
-
-    font-weight: 600;
-}
-
-
 /* =========================
    LOCATION
 ========================= */
 
 .location {
-    background: var(--light-pink);
-
+    background: var(--soft-pink);
     text-align: center;
+    min-height: 70vh;
+
+    display: flex;
+    align-items: center;
 }
 
 .location-label {
     font-size: 11px;
-
     letter-spacing: 4px;
-
     text-transform: uppercase;
-
     color: #633b4d;
-
     margin-bottom: 20px;
-
     font-weight: 700;
 }
 
 .location h2 {
     font-family: "Cormorant Garamond", serif;
-
     font-size: clamp(40px, 6vw, 65px);
-
     font-weight: 600;
-
     color: #633b4d;
-
     margin-bottom: 20px;
 }
 
 .location p {
     color: #452d35;
-
-    font-size: 14px;
-
+    font-size: 18px;
     line-height: 1.9;
-
     margin-bottom: 30px;
-
     font-weight: 600;
 }
-
-
-/* Google Maps button */
 
 .map-button {
     display: inline-block;
@@ -417,109 +241,8 @@ body {
 
 .map-button:hover {
     background: #633b4d;
-
     color: white;
 }
-
-
-/* =========================
-   FINAL PAGE
-========================= */
-
-.final {
-    min-height: 60vh;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    text-align: center;
-
-    background:
-        linear-gradient(
-            rgba(248, 224, 232, .48),
-            rgba(251, 236, 241, .58)
-        ),
-        url("https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=2000&q=90");
-
-    background-size: cover;
-
-    background-position: center;
-}
-
-.final-content {
-    color: #3b252d;
-
-    padding: 40px;
-}
-
-
-/* SAVE THE DATE */
-
-.final-small {
-    font-size: 11px;
-
-    letter-spacing: 5px;
-
-    margin-bottom: 12px;
-
-    font-weight: 700;
-
-    color: #4a3038;
-}
-
-
-/* Date under SAVE THE DATE */
-
-.final-date {
-    font-family: "Cormorant Garamond", serif;
-
-    font-size: 24px;
-
-    font-weight: 700;
-
-    letter-spacing: 3px;
-
-    color: #3a252d;
-
-    margin-bottom: 18px;
-}
-
-
-/* Smaller birthday title */
-
-.final h2 {
-    font-family: "Cormorant Garamond", serif;
-
-    font-size: clamp(32px, 5vw, 55px);
-
-    font-weight: 600;
-
-    margin-bottom: 25px;
-
-    color: #3b252d;
-
-    text-shadow:
-        0 2px 8px rgba(255,255,255,.8);
-}
-
-
-/* Final message */
-
-.final p {
-    font-family: "Cormorant Garamond", serif;
-
-    font-size: 28px;
-
-    font-style: italic;
-
-    color: #352229;
-
-    font-weight: 600;
-}
-
 
 /* =========================
    FOOTER
@@ -527,22 +250,16 @@ body {
 
 footer {
     background: #e8ccd7;
-
     padding: 35px 20px;
-
     text-align: center;
 }
 
 footer p {
     font-size: 10px;
-
     letter-spacing: 3px;
-
     color: #4f343d;
-
     font-weight: 700;
 }
-
 
 /* =========================
    MUSIC BUTTON
@@ -552,11 +269,9 @@ footer p {
     position: fixed;
 
     right: 20px;
-
     bottom: 20px;
 
     width: 48px;
-
     height: 48px;
 
     border-radius: 50%;
@@ -586,7 +301,6 @@ footer p {
     color: white;
 }
 
-
 /* =========================
    ANIMATION
 ========================= */
@@ -605,7 +319,6 @@ footer p {
 
 }
 
-
 /* =========================
    MOBILE
 ========================= */
@@ -616,34 +329,22 @@ footer p {
         padding: 50px 15px;
     }
 
-    .small-title {
-        font-size: 13px;
-
-        letter-spacing: 3px;
-
-        margin-bottom: 20px;
-    }
-
     .hero h1 {
         font-size: 52px;
-
         line-height: 1;
-
         margin-bottom: 25px;
+    }
+
+    .party {
+        font-size: 25px;
+        letter-spacing: 1px;
+        margin-bottom: 20px;
     }
 
     .date-time {
         font-size: 25px;
-
         letter-spacing: 1px;
-    }
-
-    .party {
-        font-size: 13px;
-
-        letter-spacing: 4px;
-
-        margin-bottom: 40px;
+        margin-bottom: 35px;
     }
 
     .countdown {
@@ -660,7 +361,6 @@ footer p {
 
     .countdown-label {
         font-size: 8px;
-
         letter-spacing: 1px;
     }
 
@@ -668,30 +368,37 @@ footer p {
         padding: 75px 20px;
     }
 
+    .intro {
+        min-height: 65vh;
+    }
+
     .intro-text {
         font-size: 27px;
         line-height: 1.55;
     }
 
-    .details-grid {
-        grid-template-columns: 1fr;
+    .location {
+        min-height: 65vh;
     }
 
-    .final p {
-        font-size: 25px;
+    .location h2 {
+        font-size: 42px;
+    }
+
+    .location p {
+        font-size: 16px;
     }
 
 }
-
-
-/* =========================
-   SMALL PHONES
-========================= */
 
 @media (max-width: 400px) {
 
     .hero h1 {
         font-size: 44px;
+    }
+
+    .party {
+        font-size: 22px;
     }
 
     .date-time {
@@ -721,11 +428,10 @@ footer p {
 }
 
 </style>
+
 </head>
 
-
 <body>
-
 
 <!-- =========================
      FIRST PAGE
@@ -735,25 +441,17 @@ footer p {
 
     <div class="hero-content">
 
-        <div class="small-title">
-            You are invited
-        </div>
-
         <h1>
-            Աստղը դառնում է<br>
-            8 տարեկան
+            Աստղը դառնում է 8 տարեկան
         </h1>
+
+        <div class="party">
+            Հրավիրում ենք PAJAMAS PARTY-ին
+        </div>
 
         <div class="date-time">
             Սեպտեմբերի 6 · 13:00–17:00
         </div>
-
-        <div class="party">
-            PAJAMAS PARTY
-        </div>
-
-
-        <!-- COUNTDOWN -->
 
         <div class="countdown">
 
@@ -823,9 +521,8 @@ footer p {
 </section>
 
 
-
 <!-- =========================
-     SECOND PAGE
+     INVITATION
 ========================= -->
 
 <section class="section intro">
@@ -833,91 +530,21 @@ footer p {
     <div class="section-inner">
 
         <p class="intro-text">
+
             Սիրով հրավիրում ենք Ձեզ մասնակցելու
             Աստղի 8-րդ տարեդարձին։
+
             <br><br>
+
             Սպասվում է ուրախ և գեղեցիկ օր՝
             լի խաղերով, ժպիտներով և
             անմոռանալի պահերով։
+
         </p>
 
     </div>
 
 </section>
-
-
-
-<!-- =========================
-     DETAILS
-========================= -->
-
-<section class="section details">
-
-    <div class="section-inner">
-
-        <div class="details-grid">
-
-
-            <div class="detail-card">
-
-                <div class="detail-number">
-                    06
-                </div>
-
-                <div class="detail-title">
-                    Սեպտեմբեր
-                </div>
-
-                <div class="detail-text">
-                    2026<br>
-                    Կիրակի
-                </div>
-
-            </div>
-
-
-            <div class="detail-card">
-
-                <div class="detail-number">
-                    13:00
-                </div>
-
-                <div class="detail-title">
-                    Ժամը
-                </div>
-
-                <div class="detail-text">
-                    Տոնակատարության սկիզբ<br>
-                    մինչև 17:00
-                </div>
-
-            </div>
-
-
-            <div class="detail-card">
-
-                <div class="detail-number">
-                    ♡
-                </div>
-
-                <div class="detail-title">
-                    Pajamas Party
-                </div>
-
-                <div class="detail-text">
-                    Wear your favorite<br>
-                    pajamas
-                </div>
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-</section>
-
 
 
 <!-- =========================
@@ -937,10 +564,15 @@ footer p {
         </h2>
 
         <p>
-            Սեպտեմբերի 6 · 13:00–17:00<br>
+
+            Սեպտեմբերի 6 · 13:00–17:00
+
+            <br>
+
             Սիրով սպասում ենք Ձեզ
             միասին նշելու Աստղի
             8-րդ տարեդարձը։
+
         </p>
 
         <a
@@ -957,37 +589,6 @@ footer p {
 </section>
 
 
-
-<!-- =========================
-     FINAL PAGE
-========================= -->
-
-<section class="final">
-
-    <div class="final-content">
-
-        <div class="final-small">
-            SAVE THE DATE
-        </div>
-
-        <div class="final-date">
-            ՍԵՊՏԵՄԲԵՐԻ 6
-        </div>
-
-        <h2>
-            Աստղի 8-րդ տարեդարձ
-        </h2>
-
-        <p>
-            Կհանդիպենք այնտեղ, սիրով սպասում ենք ♡
-        </p>
-
-    </div>
-
-</section>
-
-
-
 <!-- =========================
      FOOTER
 ========================= -->
@@ -999,7 +600,6 @@ footer p {
     </p>
 
 </footer>
-
 
 
 <!-- =========================
@@ -1027,9 +627,7 @@ footer p {
 </audio>
 
 
-
 <script>
-
 
 /* =========================
    COUNTDOWN
@@ -1073,8 +671,10 @@ function updateCountdown() {
 
     const hours =
         Math.floor(
-            (distance %
-            (1000 * 60 * 60 * 24))
+            (
+                distance %
+                (1000 * 60 * 60 * 24)
+            )
             /
             (1000 * 60 * 60)
         );
@@ -1082,8 +682,10 @@ function updateCountdown() {
 
     const minutes =
         Math.floor(
-            (distance %
-            (1000 * 60 * 60))
+            (
+                distance %
+                (1000 * 60 * 60)
+            )
             /
             (1000 * 60)
         );
@@ -1091,8 +693,10 @@ function updateCountdown() {
 
     const seconds =
         Math.floor(
-            (distance %
-            (1000 * 60))
+            (
+                distance %
+                (1000 * 60)
+            )
             /
             1000
         );
@@ -1122,11 +726,11 @@ function updateCountdown() {
 
 updateCountdown();
 
+
 setInterval(
     updateCountdown,
     1000
 );
-
 
 
 /* =========================
@@ -1137,6 +741,7 @@ const music =
     document.getElementById(
         "birthdayMusic"
     );
+
 
 const musicButton =
     document.getElementById(
@@ -1186,7 +791,5 @@ musicButton.addEventListener(
 
 </script>
 
-
 </body>
 </html>
-```

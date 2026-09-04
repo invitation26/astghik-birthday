@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="hy">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Աստղի ծննդյան տարեդարձ</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+:root {
+    --cream: #f7f3ed;
+    --dark: #171512;
+    --gold: #b59a6a;
+    --soft-gold: #d8c39a;
+    --muted: #817a70;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--cream);
+    color: var(--dark);
+    font-family: "Montserrat", sans-serif;
+    overflow-x: hidden;
+}
+
+/* PRELOADER */
+
+.preloader {
+    position: fixed;
+    inset: 0;
+    background: var(--dark);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 1s ease, visibility 1s ease;
+}
+
+.preloader.hide {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader-text {
+    color: var(--soft-gold);
+    font-family: "Cormorant Garamond", serif;
+    font-size: 30px;
+    letter-spacing: 5px;
+}
+
+/* HERO */
+
+.hero {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background:
+        linear-gradient(
+            rgba(15, 14, 12, .55),
+            rgba(15, 14, 12, .70)
+        ),
+        url("https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&w=2000&q=90")
+        center/cover no-repeat;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 25px;
+    border: 1px solid rgba(216,195,154,.6);
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    color: white;
+    padding: 30px;
+    animation: fadeUp 1.5s ease forwards;
+}
+
+.small-title {
+    font-size: 10px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: var(--soft-gold);
+    margin-bottom: 28px;
+}
+
+.hero h1 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(55px, 11vw, 125px);
+    line-height: .85;
+    font-weight: 300;
+    letter-spacing: -2px;
+}
+
+.hero h2 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(28px, 4vw, 48px);
+    font-weight: 400;
+    margin-top: 25px;
+}
+
+.hero-date {
+    margin-top: 32px;
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+.scroll {
+    position: absolute;
+    bottom: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 9px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+.scroll::after {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 42px;
+    background: var(--soft-gold);
+    margin: 12px auto 0;
+}
+
+/* GENERAL */
+
+section {
+    padding: 105px 25px;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.section-label {
+    font-size: 9px;
+    letter-spacing: 5px;
+    color: var(--gold);
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 18px;
+}
+
+.section-title {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(45px, 7vw, 72px);
+    font-weight: 400;
+    text-align: center;
+    line-height: 1;
+}
+
+.divider {
+    width: 55px;
+    height: 1px;
+    background: var(--gold);
+    margin: 27px auto;
+}
+
+/* INTRO */
+
+.intro {
+    background: var(--cream);
+}
+
+.intro-text {
+    max-width: 650px;
+    margin: 35px auto 0;
+    text-align: center;
+    color: #716b61;
+    line-height: 2;
+    font-size: 14px;
+}
+
+/* DETAILS */
+
+.details {
+    background: var(--dark);
+    color: white;
+}
+
+.details .section-title {
+    color: white;
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 60px;
+    border-top: 1px solid rgba(255,255,255,.13);
+    border-bottom: 1px solid rgba(255,255,255,.13);
+}
+
+.detail {
+    padding: 48px 25px;
+    text-align: center;
+    border-right: 1px solid rgba(255,255,255,.13);
+}
+
+.detail:last-child {
+    border-right: none;
+}
+
+.detail-icon {
+    color: var(--soft-gold);
+    font-size: 24px;
+    margin-bottom: 18px;
+}
+
+.detail h3 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 29px;
+    font-weight: 400;
+    margin-bottom: 12px;
+}
+
+.detail p {
+    color: #aaa49b;
+    font-size: 11px;
+    line-height: 1.8;
+}
+
+/* COUNTDOWN */
+
+.countdown {
+    background: #eee9e1;
+}
+
+.countdown-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 55px;
+    margin-top: 55px;
+}
+
+.count-number {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 62px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.count-label {
+    font-size: 8px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-align: center;
+}
+
+/* LOCATION */
+
+.location {
+    background: white;
+}
+
+.location-box {
+    max-width: 760px;
+    margin: 55px auto 0;
+    text-align: center;
+    padding: 65px 30px;
+    border: 1px solid #ded8ce;
+}
+
+.location-name {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 43px;
+    margin-bottom: 12px;
+}
+
+.location-address {
+    color: var(--muted);
+    font-size: 12px;
+    margin-bottom: 32px;
+}
+
+.button {
+    display: inline-block;
+    padding: 15px 30px;
+    border: 1px solid var(--dark);
+    color: var(--dark);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 9px;
+    transition: all .3s ease;
+}
+
+.button:hover {
+    background: var(--dark);
+    color: white;
+}
+
+/* RSVP */
+
+.rsvp {
+    background: var(--cream);
+}
+
+.rsvp-box {
+    max-width: 600px;
+    margin: 55px auto 0;
+}
+
+.form-group {
+    margin-bottom: 23px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 9px;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #d8d1c6;
+    background: transparent;
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+    outline: none;
+}
+
+textarea {
+    height: 110px;
+    resize: none;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--gold);
+}
+
+.submit-button {
+    width: 100%;
+    border: none;
+    background: var(--dark);
+    color: white;
+    padding: 17px;
+    cursor: pointer;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-size: 9px;
+    transition: .3s;
+}
+
+.submit-button:hover {
+    background: var(--gold);
+}
+
+/* FINAL */
+
+.final {
+    min-height: 65vh;
+    background:
+        linear-gradient(
+            rgba(15,14,12,.65),
+            rgba(15,14,12,.75)
+        ),
+        url("https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=2000&q=90")
+        center/cover no-repeat;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.final-content h2 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(50px, 8vw, 90px);
+    font-weight: 300;
+}
+
+.final-content p {
+    color: #ddd5c9;
+    margin-top: 20px;
+    letter-spacing: 2px;
+    font-size: 10px;
+}
+
+/* FOOTER */
+
+footer {
+    background: var(--dark);
+    color: #aaa49b;
+    padding: 32px 20px;
+    text-align: center;
+    font-size: 8px;
+    letter-spacing: 2px;
+}
+
+/* MUSIC */
+
+.music-button {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    width: 47px;
+    height: 47px;
+    border-radius: 50%;
+    border: 1px solid var(--soft-gold);
+    background: rgba(20,19,17,.9);
+    color: var(--soft-gold);
+    cursor: pointer;
+    z-index: 1000;
+    font-size: 15px;
+}
+
+/* ANIMATION */
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+/* MOBILE */
+
+@media(max-width: 700px) {
+
+    section {
+        padding: 80px 20px;
+    }
+
+    .hero::before {
+        inset: 15px;
+    }
+
+    .details-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .detail {
+        border-right: none;
+        border-bottom: 1px solid rgba(255,255,255,.13);
+    }
+
+    .detail:last-child {
+        border-bottom: none;
+    }
+
+    .countdown-wrapper {
+        gap: 18px;
+    }
+
+    .count-number {
+        font-size: 40px;
+    }
+
+    .count-label {
+        font-size: 7px;
+        letter-spacing: 2px;
+    }
+
+    .location-box {
+        padding: 45px 20px;
+    }
+
+    .location-name {
+        font-size: 34px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- PRELOADER -->
+
+<div class="preloader" id="preloader">
+    <div class="loader-text">ASTGHIK</div>
+</div>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="small-title">
+            You are cordially invited
+        </div>
+
+        <h1>Աստղիկ</h1>
+
+        <h2>Ծննդյան տարեդարձ</h2>
+
+        <div class="hero-date">
+            Սեպտեմբերի 6 · 13:00–17:00
+        </div>
+
+    </div>
+
+    <div class="scroll">
+        Discover
+    </div>
+
+</section>
+
+
+<!-- INTRO -->
+
+<section class="intro">
+
+    <div class="container">
+
+        <div class="section-label">
+            A Special Day
+        </div>
+
+        <h2 class="section-title">
+            Եկեք միասին տոնենք
+        </h2>
+
+        <div class="divider"></div>
+
+        <p class="intro-text">
+            Սիրով հրավիրում ենք Ձեզ մասնակցելու
+            Աստղի ծննդյան տարեդարձին։
+            Սպասվում է գեղեցիկ և ուրախ օր՝
+            լի ժպիտներով, խաղերով և անմոռանալի պահերով։
+            Ձեր ներկայությունը մեզ համար կլինի
+            ամենագեղեցիկ նվերը։
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- DETAILS -->
+
+<section class="details">
+
+    <div class="container">
+
+        <div class="section-label">
+            The Celebration
+        </div>
+
+        <h2 class="section-title">
+            Պահպանեք օրը
+        </h2>
+
+        <div class="details-grid">
+
+            <div class="detail">
+
+                <div class="detail-icon">✦</div>
+
+                <h3>Սեպտեմբերի 6</h3>
+
+                <p>
+                    2026<br>
+                    Կիրակի
+                </p>
+
+            </div>
+
+
+            <div class="detail">
+
+                <div class="detail-icon">✧</div>
+
+                <h3>13:00–17:00</h3>
+
+                <p>
+                    Ծննդյան<br>
+                    տոնակատարություն
+                </p>
+
+            </div>
+
+
+            <div class="detail">
+
+                <div class="detail-icon">◇</div>
+
+                <h3>COMPASS KIDS ZONE</h3>
+
+                <p>
+                    Սիրով սպասում ենք<br>
+                    բոլորիդ
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- COUNTDOWN -->
+
+<section class="countdown">
+
+    <div class="container">
+
+        <div class="section-label">
+            Counting the moments
+        </div>
+
+        <h2 class="section-title">
+            Մինչև մեր հանդիպումը
+        </h2>
+
+        <div class="countdown-wrapper">
+
+            <div>
+                <div class="count-number" id="days">00</div>
+                <div class="count-label">Օր</div>
+            </div>
+
+            <div>
+                <div class="count-number" id="hours">00</div>
+                <div class="count-label">Ժամ</div>
+            </div>
+
+            <div>
+                <div class="count-number" id="minutes">00</div>
+                <div class="count-label">Րոպե</div>
+            </div>
+
+            <div>
+                <div class="count-number" id="seconds">00</div>
+                <div class="count-label">Վայրկյան</div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- LOCATION -->
+
+<section class="location">
+
+    <div class="container">
+
+        <div class="section-label">
+            The Venue
+        </div>
+
+        <h2 class="section-title">
+            Սպասում ենք Ձեզ
+        </h2>
+
+        <div class="location-box">
+
+            <div class="location-name">
+                COMPASS KIDS ZONE
+            </div>
+
+            <div class="location-address">
+                Սեպտեմբերի 6 · 13:00–17:00
+            </div>
+
+            <a
+                class="button"
+                href="https://www.google.com/maps/search/?api=1&query=COMPASS+KIDS+ZONE"
+                target="_blank"
+            >
+                Բացել քարտեզը
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- RSVP -->
+
+<section class="rsvp">
+
+    <div class="container">
+
+        <div class="section-label">
+            Kindly Reply
+        </div>
+
+        <h2 class="section-title">
+            RSVP
+        </h2>
+
+        <div class="divider"></div>
+
+        <div class="rsvp-box">
+
+            <form id="rsvpForm">
+
+                <div class="form-group">
+
+                    <label>Ձեր անունը</label>
+
+                    <input
+                        type="text"
+                        placeholder="Գրեք Ձեր անունը"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Կմասնակցե՞ք</label>
+
+                    <select required>
+
+                        <option value="">
+                            Ընտրեք տարբերակը
+                        </option>
+
+                        <option>
+                            Այո, սիրով կմասնակցեմ
+                        </option>
+
+                        <option>
+                            Ցավոք, չեմ կարող մասնակցել
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Հաղորդագրություն</label>
+
+                    <textarea
+                        placeholder="Գրեք հաղորդագրություն..."
+                    ></textarea>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="submit-button"
+                >
+                    Ուղարկել պատասխան
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FINAL -->
+
+<section class="final">
+
+    <div class="final-content">
+
+        <div class="section-label">
+            With Love
+        </div>
+
+        <h2>
+            Կհանդիպենք այնտեղ
+        </h2>
+
+        <p>
+            ՁԵՐ ՆԵՐԿԱՅՈՒԹՅՈՒՆԸ ՄԵԶ ՀԱՄԱՐ ԼԱՎԱԳՈՒՅՆ ՆՎԵՐՆ Է
+        </p>
+
+    </div>
+
+</section>
+
+
+<footer>
+    ԱՍՏՂԻԿ · ԾՆՆԴՅԱՆ ՏԱՐԵԴԱՐՁ · 2026
+</footer>
+
+
+<!-- MUSIC BUTTON -->
+
+<button
+    class="music-button"
+    id="musicButton"
+    aria-label="Play music"
+>
+    ♪
+</button>
+
+
+<audio
+    id="backgroundMusic"
+    loop
+>
+    <source
+        src="https://cdn.pixabay.com/audio/2022/10/25/audio_946b3e9e65.mp3"
+        type="audio/mpeg"
+    >
+</audio>
+
+
+<script>
+
+/* PRELOADER */
+
+window.addEventListener("load", function() {
+
+    setTimeout(function() {
+
+        document
+            .getElementById("preloader")
+            .classList.add("hide");
+
+    }, 900);
+
+});
+
+
+/* COUNTDOWN */
+
+const birthdayDate =
+    new Date("September 6, 2026 13:00:00").getTime();
+
+
+function updateCountdown() {
+
+    const now = new Date().getTime();
+
+    const distance = birthdayDate - now;
+
+    if (distance <= 0) {
+
+        document.getElementById("days").innerText = "00";
+        document.getElementById("hours").innerText = "00";
+        document.getElementById("minutes").innerText = "00";
+        document.getElementById("seconds").innerText = "00";
+
+        return;
+    }
+
+    const days =
+        Math.floor(distance / (1000 * 60 * 60 * 24));
+
+    const hours =
+        Math.floor(
+            (distance % (1000 * 60 * 60 * 24))
+            / (1000 * 60 * 60)
+        );
+
+    const minutes =
+        Math.floor(
+            (distance % (1000 * 60 * 60))
+            / (1000 * 60)
+        );
+
+    const seconds =
+        Math.floor(
+            (distance % (1000 * 60))
+            / 1000
+        );
+
+    document.getElementById("days").innerText =
+        String(days).padStart(2, "0");
+
+    document.getElementById("hours").innerText =
+        String(hours).padStart(2, "0");
+
+    document.getElementById("minutes").innerText =
+        String(minutes).padStart(2, "0");
+
+    document.getElementById("seconds").innerText =
+        String(seconds).padStart(2, "0");
+
+}
+
+updateCountdown();
+
+setInterval(updateCountdown, 1000);
+
+
+/* MUSIC */
+
+const music =
+    document.getElementById("backgroundMusic");
+
+const musicButton =
+    document.getElementById("musicButton");
+
+let playing = false;
+
+musicButton.addEventListener("click", function() {
+
+    if (!playing) {
+
+        music.play();
+
+        musicButton.innerHTML = "❚❚";
+
+        playing = true;
+
+    } else {
+
+        music.pause();
+
+        musicButton.innerHTML = "♪";
+
+        playing = false;
+
+    }
+
+});
+
+
+/* RSVP */
+
+document
+    .getElementById("rsvpForm")
+    .addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+        alert(
+            "Շնորհակալություն։ Ձեր պատասխանը գրանցվեց ❤️"
+        );
+
+        this.reset();
+
+    });
+
+</script>
+
+</body>
+</html>
